@@ -6,20 +6,14 @@
     <meta name="Description" content="Sitio web hecho en ejercicio de HTML">
     <meta name="Keywords" content="education, world">
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <header>
+    <header class="main-nav">
       <!-- Parte del encabezado -->
       <nav>
-        <h1>World Tech Makers</h1>
-        <div>
-          <ul>
-            <li>Ingles</li>
-            <li>Espaniol</li>
-            <li>Portugues</li>
-          </ul>
-        </div>
-        <ul>
+        <a href="" id="logo"></a>
+        <ul class="main-links">
           <li>Home</li>
           <li>Bootcamps</li>
           <li>Companies</li>
@@ -29,22 +23,29 @@
           <li>Games</li>
           <li>Contact</li>
         </ul>
+        <div>
+          <ul class="languages">
+            <li>Ingles</li>
+            <li>Español</li>
+            <li>Portugues</li>
+          </ul>
+        </div>
       </nav>
       <!-- Parte del encabezado: Titulo -->
-      <h2>We dream it, we do it.</h2>
+      <h1>We dream it, we do it.</h1>
       <p>Leading Latin America's technology education Renaissance</p>
       <button type="button">Apply now</button>
 
-      <nav>
-        <ul>
-          <li><a href="#">Remoto</a></li>
-          <li><a href="http://nativo.digital/" target="_blank">Nativo digital</a></li>
-          <li><a href="http://bootcamps.online/" target="_blank">Bootcamps online</a></li>
-        </ul>
-      </nav>
+      <ul class="page-areas">
+        <li><a href="#">Remoto</a></li>
+        <li><a href="http://nativo.digital/" target="_blank">Nativo digital</a></li>
+        <li><a href="http://bootcamps.online/" target="_blank">Bootcamps online</a></li>
+      </ul>
+    </header>    
 
-      <!-- Areas de los bootcamps -->
-      <section>
+    <!-- Areas de los bootcamps -->
+    <section class="bootcamps-section">
+      <div>
         <article>
           <h2>Web development</h2>
           <ul>
@@ -68,10 +69,12 @@
         <article>
           <h2>Fund your startup</h2>
         </article>
-      </section>
+      </div>
+    </section>
 
-      <!-- Ideales de WTM -->
-      <section>
+    <!-- Ideales de WTM -->
+    <section class="ideas-section">
+      <div>
         <article>
           <h3>Our philosophy</h3>
           <p>We are a multinational and multidisciplinary team of high-performance and innovative programmers, entrepreneurs, designers, and educators. </p>
@@ -97,84 +100,117 @@
           <p>Whether you are in Santiago, São Paulo, Medellin or Bogota, we connect you with a global community of makers and mentors with vast experience in software development, entrepreneurship, design and investment. </p>
           <p>Every week, we bring industry experts from Silicon Valley and other parts of the world. Every cohort has the opportunity to connect with Fortune 500 companies or startups leading technologyrevolutions across the globe.</p>
         </article>
-      </section>
-      <section>
+      </div>
+    </section>
+
+    <!-- Seccion de ebook -->
+    <section class="ebook">
+      <div>
         <h2>Our way and culture</h2>
         <p>At World Tech Makers, our mission is to transform society by using technology and education. As Latin Americans and Americans, we live by a set of values that have become the foundation at everything we do. </p>
         <p>Beyond nationality, gender, age or any other affiliation, we believe potential is inherent to humanity and the place you are born at should not determine your dynamic range to create and disrupt. Learn more about us by downloading our company’s manifesto.</p>
-        <button type="button">Download free Ebook</button>
-      </section>
-      <!-- Seccion de mentores -->
-      <section>
-        <h2>Mentors</h2>
+        <a href="#" class="button">Download free Ebook</a>
+      </div>
+    </section>
+
+    <!-- Seccion de mentores -->
+    <section class="mentors-section">
+      <h2>Mentors</h2>
+      <div>
         <article>
           <h3>David Hoover</h3>
-          <img src="david.jpg">
-          <p>Developer and co-founder at DevBootCamp. Angel investor, father and entrepreneur.</p>
+          <div>
+            <img src="david.jpg">
+            <p>Developer and co-founder at DevBootCamp. Angel investor, father and entrepreneur.</p>
+          </div>
         </article>
         <article>
           <h3>Tim Draper</h3>
-          <img src="david.jpg">
-          <p>Successful Venture Capitalist from Silicon Valley.</p>
+          <div>
+            <img src="tim.jpg">
+            <p>Successful Venture Capitalist from Silicon Valley.</p>
+          </div>
         </article>
         <article>
           <h3>Ted Gonder</h3>
-          <img src="david.jpg">
-          <p>CEO and Co-founder at Moneythink, U.S. President's Advisory Council member. Based between Chicago and Washington.</p>
+          <div>
+            <img src="ted.png">
+            <p>CEO and Co-founder at Moneythink, U.S. President's Advisory Council member. Based between Chicago and Washington.</p>
+            </div>
         </article>
         <article>
           <h3>Guillermo Iguaran</h3>
-          <img src="david.jpg">
-          <p>Colombian based in NYC. Rails Core Team member. Rockstar developer.</p>
+          <div>
+            <img src="guillermo.png">
+            <p>Colombian based in NYC. Rails Core Team member. Rockstar developer.</p>
+          </div>
         </article>
         <article>
           <h3>Lisa Russel</h3>
-          <img src="david.jpg">
-          <p>American based in Los Angeles. Co-founder at Pitch Training Camp. World Traveler.</p>
+          <div>
+            <img src="lisa.png">
+            <p>American based in Los Angeles. Co-founder at Pitch Training Camp. World Traveler.</p>
+          </div>
         </article>
         <article>
           <h3>Donny Askin</h3>
-          <img src="david.jpg">
-          <p>Entrepreneur at Tech/Turn Consulting. Strategist and fundraiser managing early, growth and mid-stage technology companies.</p>
+          <div>
+            <img src="donny.jpg">
+            <p>Entrepreneur at Tech/Turn Consulting. Strategist and fundraiser managing early, growth and mid-stage technology companies.</p>
+          </div>
         </article>
         <article>
           <h3>Charles Stromeyer</h3>
-          <img src="david.jpg">
-          <p>Harvard University graduate. Experienced business development advisor based in Boston. Passionate about excellence and execution.</p>
+          <div>
+            <img src="charles.jpg">
+            <p>Harvard University graduate. Experienced business development advisor based in Boston. Passionate about excellence and execution.</p>
+          </div>
         </article>
         <article>
           <h3>Nis Acharya</h3>
-          <img src="david.jpg">
-          <p>Investor and Founder at Markit. Mentor and advisor at various startups and accelerators such as Techstars and Seedcamp.</p>
+          <div>
+            <img src="nish.jpg">
+            <p>Investor and Founder at Markit. Mentor and advisor at various startups and accelerators such as Techstars and Seedcamp.</p>
+          </div>
         </article>
         <article>
           <h3>Ilya Brotzky</h3>
-          <img src="david.jpg">
-          <p>Graduate of Cornell's Dyson School of Business with 4 years experience in the Brazilian startup community. VP of sales.</p>
+          <div>
+            <img src="ilya.jpg">
+            <p>Graduate of Cornell's Dyson School of Business with 4 years experience in the Brazilian startup community. VP of sales.</p>
+          </div>
         </article>
-        <span>From successful entrepreneurs turned angel investors from the United States to top software developers born in Colombia, to legendary Venture Capitalists such as Tim Draper, we count with a global network of dedicated professionals committed to empower, innovate and disrupt the technology and entrepreneurship industries.</span>
-      </section>
+      </div>
+      <span>From successful entrepreneurs turned angel investors from the United States to top software developers born in Colombia, to legendary Venture Capitalists such as Tim Draper, we count with a global network of dedicated professionals committed to empower, innovate and disrupt the technology and entrepreneurship industries.</span>
+    </section>
 
-      <!-- reconocimiento worldclass -->
-      <section>
-        <h2>Worldclass recognition</h2>
+    <!-- reconocimiento worldclass -->
+    <section class="associations">
+      <h2>Worldclass recognition</h2>
+      <div>
         <span>We are proud alumni at MassChallenge (top 26 Finalists), Draper University- Silicon Valley (winning company Summer 2015), and Startup Chile (Generation 12th).</span>
-        <div>
+      </div>
+      <div id="div-worldclass">
           <img src="worldclass_mc.png">
           <img src="worldclass_draper.png">
           <img src="worldclass_startupc.png">
         </div>
-      </section>
-      <!-- Seccion de medios -->
-      <section>
-        <h2>Medios</h2>
-        <span>If you are a company looking for talent, please contact us. We will give you access to a pool of talent, for free.</span>
-        <div>
-          <img src="worldclass_mc.png">
-          <img src="worldclass_draper.png">
-          <img src="worldclass_startupc.png">
-        </div>
-      </section>
-    </header>    
+    </section>
+    <!-- Seccion de medios -->
+    <section class="associations">
+      <hr>
+      <h2>Medios</h2>
+      <span>If you are a company looking for talent, please contact us. We will give you access to a pool of talent, for free.</span>
+      <div id="div-images-medios">
+        <img src="img_rcn.png">
+        <img src="img_bluradio.png">
+        <img src="img_caracol.png">
+        <img src="img_semana.png">
+        <img src="img_elespectador.png">
+        <img src="img_todelar.png">
+        <img src="img_women.png">
+        <img src="img_nextcoast.png">
+      </div>
+    </section>
   </body>
 </html>

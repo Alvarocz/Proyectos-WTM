@@ -1,0 +1,224 @@
+.main-nav {
+	background-image: url("img_fondo.png");
+	color: #FFF;
+	padding-bottom: 300px;
+}
+
+.main-nav nav {
+	background: gray;
+	padding-bottom: 50px;
+	position: relative;
+}
+
+.main-nav nav a#logo {
+	background-image: url("logo.png");
+	background-size: 40px;
+	background-repeat: no-repeat;
+	display: block;
+	float: left;
+	height: 30px;
+	margin-right: 15px;
+	padding-bottom: 25px;
+	width: 40px;
+}
+
+.main-nav h1 {
+	font-size: 30px;
+}
+.main-nav p {
+	font-size: 17px;
+}
+
+.main-nav .languages {
+	background-color: rgb(20, 20, 20);
+	border-style: solid 1px #000;
+	float: left;
+	left: 10px;
+	list-style: none;
+	margin-left: 10px;
+	margin-right: 10px;
+	position: absolute;
+}
+
+.main-nav .languages li {
+	display: none;
+}
+
+.main-nav nav .main-links {
+	position: absolute;
+	right: 10px;
+}
+
+.main-nav nav .main-links li {
+	float: left;
+	list-style: none;
+	margin-right: 35px;
+}
+
+
+.main-nav .page-areas {
+	float: right;
+	position: relative;
+}
+
+.bootcamps-section {
+	padding-bottom: 175px;
+	padding-top: 50px;
+}
+
+.bootcamps-section div {
+	margin: auto auto auto auto;
+	width: 65%;
+}
+
+.bootcamps-section div article {
+	float: left;
+	margin-right: 20px;
+}
+
+.bootcamps-section, .bootcamps-section article ul {
+	color: white;
+	background: rgb(50, 50, 50);
+	list-style: none;
+}
+
+.ebook {
+	background: rgb(210, 210, 210);
+	margin-bottom: 0px;
+	padding-bottom: 50px;
+	padding-top: 40px;
+}
+
+.ebook h2 {
+	color: #19BCBC;
+}
+
+.ebook div {
+	margin: auto;
+	width: 30%;
+}
+
+.ideas-section {
+	padding-bottom: 3%;
+	padding-top: 3%;
+	position: relative;
+	text-align: center;
+}
+
+.ideas-section article {
+	padding-top: 20px;
+}
+
+.ideas-section div {
+	margin: auto;
+	width: 50%;
+}
+
+.mentors-section {
+	margin: auto;
+	overflow: hidden;
+	padding-bottom: 50px;
+	position: relative;
+	width: 50%;
+}
+
+.mentors-section article {
+	background: rgb(238, 179, 60);
+	border-radius: 5px;
+	float: left;
+	margin-right: 30px;
+	margin-top: 45px;
+	padding-bottom: 10px;
+	width: 30%;
+}
+
+.mentors-section article div {
+	background: rgb(235, 236, 240);
+	width: 100%;
+	height: 80%;
+}
+
+.mentors-section article img {
+	height: auto;
+	width: 100%;
+}
+
+.mentors-section article h3 {
+	background: rgb(238, 179, 60);
+	border-radius: 5px 5px 0px 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.mentors-section span {
+	float: left;
+	margin-top: 30px;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+.associations {
+	color: white;
+	background: black;
+	height: 5%;
+	padding-bottom: 50px;
+	padding-top: 50px;
+	text-align: center;
+}
+
+.associations #div-worldclass img {
+	height: 5%;
+	margin-left: 12%;
+	margin-right: 12%;
+	padding-top: 50px;
+	width: 5%;
+}
+.associations #div-images-medios img {
+	height: 15%;
+	margin-left: 3%;
+	margin-right: 3%;
+	padding-top: 50px;
+	width: 15%;
+}
+
+.associations #div-worldclass {
+	margin: auto;
+	width: 95%;
+}
+
+.associations #div-images-medios {
+	margin: auto;
+	width: 30%;
+}
+
+.button {
+	background: #19BCBC;
+	border-radius: 3px;
+	color: #FFF;
+	font-size: 12px;
+	margin: auto;
+	padding: 10px 10px 10px 10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+a {
+	text-decoration: none;
+}
+
+.mentors-section, .ebook button, .bootcamps-section li {
+	text-align: center;
+}
+
+body {
+	margin: 0px 0px 0px 0px;
+	width: 100%;
+	font-family: sans-serif;
+}
+
+button {
+	margin: 0 auto;
+	position: relative;
+}
