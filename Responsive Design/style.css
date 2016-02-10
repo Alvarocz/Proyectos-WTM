@@ -1,0 +1,55 @@
+body {
+	font-family: helvetica;
+}
+
+p {
+	font-size: 28px;
+	width: 70%;
+	text-align: justify;
+}
+
+a {
+	text-decoration: none;
+	color: #FFF;
+}
+
+h1 {
+	background-color: gray;
+	color: #FFF;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	padding-left: 8px;
+	padding-top: 7px;
+}
+
+.main-menu {
+	float: left;
+	margin-left: 5px;
+	margin-right: 10px;
+	width: 9%;
+}
+
+#info p {
+	padding-top: 20px;
+	overflow: hidden;
+}
+
+.main-menu ul {
+	padding-left: 0px;
+}
+
+.main-menu li {
+	background-color: rgb(10, 130, 255);
+	color: white;
+	border-bottom: 1px solid #FFF;
+	padding: 10px 10px 10px 10px;
+}
+
+div.img {
+	border: 3px dashed #000;
+	float: left;
+	height: 200px;
+	margin-right: 10px;
+	position: relative;
+	width: 250px;
+}
