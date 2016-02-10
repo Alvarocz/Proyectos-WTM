@@ -1,12 +1,14 @@
 .main-nav {
-	background-image: url("img_fondo.png");
 	color: #FFF;
 	padding-bottom: 300px;
+	overflow: hidden;
+	padding-bottom: 38%;
 }
 
 .main-nav nav {
-	background: gray;
-	padding-bottom: 50px;
+	background: rgba(80, 80, 80, 0.4);
+	height: 50px;
+	margin-bottom: 50px;
 	position: relative;
 }
 
@@ -22,26 +24,28 @@
 	width: 40px;
 }
 
-.main-nav h1 {
-	font-size: 30px;
-}
-.main-nav p {
-	font-size: 17px;
-}
-
 .main-nav .languages {
-	background-color: rgb(20, 20, 20);
-	border-style: solid 1px #000;
+	background: rgba(80, 80, 80, 0.8);
+	border: 1px solid rgb(210, 210, 210);
 	float: left;
-	left: 10px;
 	list-style: none;
 	margin-left: 10px;
 	margin-right: 10px;
-	position: absolute;
+	margin-top: 10px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: center;
+	width: 4%;
 }
 
-.main-nav .languages li {
+.main-nav .languages li ~ li {
 	display: none;
+}
+
+.main-nav .languages:hover li ~ li {
+	display: list-item;
 }
 
 .main-nav nav .main-links {
@@ -55,14 +59,46 @@
 	margin-right: 35px;
 }
 
+.main-nav h1 {
+	font-size: 38px;
+}
+.main-nav p {
+	font-size: 17px;
+}
 
 .main-nav .page-areas {
 	float: right;
+	margin: auto;
+	padding-right: 50px;
 	position: relative;
+	list-style: none;
+	width: 8%;
+}
+
+.main-nav .page-areas li {
+	background: rgba(100, 100, 100, 0.2);
+	border: 1px solid #FFF;
+	padding: 8px 10px 8px 10px;
+	margin-bottom: 8px;
+	margin-top: 8px;
+}
+
+.main-nav a {
+	text-align: center;
+}
+
+.video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0 auto;
+	width: 100%;
+	/*height: 100%;*/
+	z-index: -100; 
 }
 
 .bootcamps-section {
-	padding-bottom: 175px;
+	padding-bottom: 22%;
 	padding-top: 50px;
 }
 
@@ -76,6 +112,12 @@
 	margin-right: 20px;
 }
 
+.bootcamps-section article img {
+	margin: auto;
+	width: 220px;
+	height: 280px;	 
+}
+
 .bootcamps-section, .bootcamps-section article ul {
 	color: white;
 	background: rgb(50, 50, 50);
@@ -87,6 +129,7 @@
 	margin-bottom: 0px;
 	padding-bottom: 50px;
 	padding-top: 40px;
+	text-align: center;
 }
 
 .ebook h2 {
@@ -99,6 +142,7 @@
 }
 
 .ideas-section {
+	background-color: #FFF;
 	padding-bottom: 3%;
 	padding-top: 3%;
 	position: relative;
@@ -194,7 +238,18 @@
 }
 
 .button {
-	background: #19BCBC;
+	background: rgba(25, 188, 188, 0.5);
+	border-radius: 3px;
+	color: #FFF;
+	font-size: 12px;
+	margin: auto;
+	padding: 10px 10px 10px 10px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.button:hover {
+	background: rgb(25, 188, 188);
 	border-radius: 3px;
 	color: #FFF;
 	font-size: 12px;
@@ -206,9 +261,10 @@
 
 a {
 	text-decoration: none;
+	color: white;
 }
 
-.mentors-section, .ebook button, .bootcamps-section li {
+.mentors-section, .ebook, .bootcamps-section li {
 	text-align: center;
 }
 
