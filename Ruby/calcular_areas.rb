@@ -2,7 +2,7 @@
 # Autor: Alvaro Carmona
 # Creado el 15 de Febrero del 2016
 
-PI = 3.1416
+pi = 3.1416
 
 def area_rectangulo(base, altura)
 	area = base * altura
@@ -17,7 +17,7 @@ def area_cuadrado(lado)
 end
 
 def area_circulo(radio)
-	area = PI * radio ** 2
+	area = pi * radio ** 2
 
 	return area
 end
