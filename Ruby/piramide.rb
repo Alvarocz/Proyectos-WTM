@@ -12,6 +12,6 @@ caracter = gets.chomp
 
 for i in 1..num_filas
 	print " " * (num_filas - i)
-	print "#{caracter}" * (i - 1 * 2)
+	print "#{caracter}" * (i + i - 1)
 	print "\n"
 end
