@@ -1,6 +1,6 @@
 f_primos = []
 
-system("cls")
+system("clear")
 print "Ingrese un numero para calcular sus factores primos: "
 numero = gets.chomp.to_i
 
