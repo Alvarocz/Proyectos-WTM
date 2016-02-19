@@ -1,4 +1,4 @@
-system("cls")
+system("clear")
 
 puts "Serie Fibonacci en Ruby!"
 
