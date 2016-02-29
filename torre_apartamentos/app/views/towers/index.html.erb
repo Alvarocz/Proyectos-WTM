@@ -1,0 +1,13 @@
+<h1>Lista de torres</h1>
+
+<ol>
+  <% @towers.each do |tower| %>
+    <li>
+      <%= "#{tower.name} [Portero: #{tower.porter}]" %>
+    </li>
+  <% end %>
+</ol>
+
+<a href="/"><h2>Ir a home</h2></a>
+
+<a href="/towers/new/"><h2>Crear nueva torre</h2></a>

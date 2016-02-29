@@ -1,0 +1,25 @@
+<h1>Editar Apartamento</h1>
+
+<%= form_for @apartment do |f| %>
+  <p>
+    <%= f.label "Nombre" %><br>
+  </p>
+  <p>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label "Torre" %>
+  </p>
+  <p>
+    <%= f.select :tower_id, Tower.all.collect { |t| [t.name, t.id] } %>
+  </p>
+  <p>
+    <%= f.label "Piso" %><br>
+  </p>
+  <p>
+    <%= f.text_field :floor %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
