@@ -1,0 +1,25 @@
+<h1>Registrar nueva persona</h1>
+
+<%= form_for @people do |f| %>
+  <p>
+    <%= f.label "Nombre" %>
+  </p>
+  <p>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label "Identificacion" %>
+  </p>
+  <p>
+    <%= f.text_field :identication %>
+  </p>
+  <p>
+    <%= f.label "Apartamento" %>
+  </p>
+  <p>
+    <%= f.select :apartment_id, Apartment.all.collect { |t| [t.name, t.id] } %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

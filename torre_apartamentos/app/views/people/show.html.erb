@@ -1,0 +1,17 @@
+<h1>
+  <%= @people.name %>
+</h1>
+
+<p>
+  Identificacion: 
+  <%= @people.identification %>
+</p>
+
+<p>
+  Apartamento: 
+  <%= Apartment.find(@people.apartment_id).name %>
+</p>
+
+<a href="/"><h2>Ir a home</h2></a>
+
+<a href="/people/"><h2>Atras</h2></a>

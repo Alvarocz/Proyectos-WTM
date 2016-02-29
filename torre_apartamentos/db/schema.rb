@@ -11,12 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160229200619) do
+ActiveRecord::Schema.define(version: 20160229221005) do
 
   create_table "apartments", force: true do |t|
     t.string   "name"
     t.integer  "tower_id"
     t.integer  "floor"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "people", force: true do |t|
+    t.string   "name"
+    t.string   "identification"
+    t.integer  "apartment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

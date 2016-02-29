@@ -4,7 +4,9 @@
   <% @apartments.each do |apartment| %>
     <li>
       <%= "#{apartment.name} | #{Tower.find(apartment.tower_id).name} | Piso: #{apartment.floor}" %> |
-      <%= link_to "Editar", edit_apartment_path(apartment) %>
+      <%= link_to "Ver", apartment_path(apartment) %> |
+      <%= link_to "Editar", edit_apartment_path(apartment) %> |
+      <%= link_to "Quitar", apartment_path(apartment), method: :delete, data: {confirm: "Desea quitar el apartamento #{apartment.name}"} %>
     </li>
   <% end %>
 </ul>
