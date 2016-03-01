@@ -1,23 +1,33 @@
 class PeopleController < ApplicationController 
   def index
-    @people = People.all
+    @people = Person.all
   end
 
   def create
-    @people = People.new(people_params)
-    @people.save
+    @person = Person.new(person_params)
+    @person.save
     redirect_to people_path
   end
 
+  def edit
+    @person = Person.find(params[:id])
+  end
+
   def new
-    @people = People.new
+    @person = Person.new
   end
 
   def show
-    @people = People.find(params[:id])
+    @person = Person.find(params[:id])
   end
 
-  def people_params
-    params.require(:people).permit(:name, :identification, :apartment_id)
+  def update
+    @person = Person.find(params[:id])
+    @person.update
+    redirect_to people_path
+  end
+
+  def person_params
+    params.require(:person).permit(:name, :identification, :apartment_id)
   end
 end

@@ -1,0 +1,19 @@
+<h1>Lista de inquilinos</h1>
+
+<ul>
+  <% @people.each do |person| %>
+    <li>
+      <%= "#{person.name} | #{person.identification} | " %>
+      <%= "#{Apartment.find(person.apartment_id).name} | \
+      	Piso: #{Apartment.find(person.apartment_id).floor} | \
+      	#{Tower.find(Apartment.find(person.apartment_id).tower_id).name}" %> |
+      <%= link_to "Ver", person_path(person) %> |
+      <%= link_to "Editar", edit_person_path(person) %> |
+      <%= link_to "Quitar", person_path(person), method: :delete, data: {confirm: "Desea quitar el inquilino #{person.name}"} %>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/"><h2>Ir a home</h2></a>
+
+<a href="/people/new/"><h2>Registrar otra persona</h2></a>

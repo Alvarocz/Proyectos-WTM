@@ -1,8 +1,8 @@
-<h1>Registrar nueva persona</h1>
+<h1>Modificar datos de la persona</h1>
 
-<% form_for @person do |f| %>
+<%= form_for @person do |f| %>
   <p>
-    <%= f.label "Nombre" %>
+    <%= f.label "Nombre" %><br>
   </p>
   <p>
     <%= f.text_field :name %>
@@ -11,7 +11,7 @@
     <%= f.label "Identificacion" %>
   </p>
   <p>
-    <%= f.text_field :identication %>
+    <%= f.text_field :identification %>
   </p>
   <p>
     <%= f.label "Apartamento" %>
@@ -23,3 +23,5 @@
     <%= f.submit %>
   </p>
 <% end %>
+
+<a href="/people/"><h2>Atras</h2></a>

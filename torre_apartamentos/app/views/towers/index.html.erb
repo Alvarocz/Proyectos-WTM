@@ -3,7 +3,9 @@
 <ol>
   <% @towers.each do |tower| %>
     <li>
-      <%= "#{tower.name} [Portero: #{tower.porter}]" %>
+      <%= "#{tower.name} (Portero: #{tower.porter})" %> |
+      <%= link_to "Editar", edit_tower_path(tower) %> |
+      <%= link_to "Quitar", tower_path(tower), method: :delete, data: {confirm: "Desea quitar la torre #{tower.name}"} %>
     </li>
   <% end %>
 </ol>

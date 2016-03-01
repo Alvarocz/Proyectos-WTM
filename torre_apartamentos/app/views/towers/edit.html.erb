@@ -1,0 +1,21 @@
+<h1>Editar torre</h1>
+
+<%= form_for @tower do |f| %>
+  <p>
+    <%= f.label "Nombre" %><br>
+  </p>
+  <p>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label "Portero" %>
+  </p>
+  <p>
+    <%= f.text_field :porter %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<a href="/towers/"><h2>Atras</h2></a>

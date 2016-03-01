@@ -1,15 +1,21 @@
 <h1>
-  <%= @people.name %>
+  <%= @person.name %>
 </h1>
 
 <p>
   Identificacion: 
-  <%= @people.identification %>
+  <%= @person.identification %>
 </p>
 
 <p>
   Apartamento: 
-  <%= Apartment.find(@people.apartment_id).name %>
+  <%= Apartment.find(@person.apartment_id).name %>
+  ( Piso:  
+  <%= Apartment.find(@person.apartment_id).floor%>
+  )
+  (
+  <%= Tower.find(Apartment.find(@person.apartment_id).tower_id).name %>
+  )
 </p>
 
 <a href="/"><h2>Ir a home</h2></a>
