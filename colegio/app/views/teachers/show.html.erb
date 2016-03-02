@@ -1,0 +1,43 @@
+<h1>Perfil profesor</h1>
+
+<p>
+  <strong>Nombre: </strong>
+  <%= @teacher.name %>
+</p>
+<p>
+  <strong>Apellido: </strong>
+  <%= @teacher.last_name %>
+</p>
+
+<p>
+  <strong>Identificacion: </strong>
+  <%= @teacher.identification %>
+</p>
+
+<p>
+  <strong>Asignatura: </strong>
+  <%= Subject.find(@teacher.subject_id).name %>
+</p>
+
+<p>
+  <strong>Email: </strong>
+  <%= @teacher.email %>
+</p>
+
+<% if @teacher.answers != [] %>
+  <ol>
+    <% @teacher.answers.each do |answer| %>
+      <li>
+        <strong>Estudiante: </strong>
+        <%= answer.student.name %><br>
+        <strong>Asignatura: </strong>
+        <%= answer.subject.name %>
+      </li>
+    <% end %>
+  </ol>
+<% end %>
+
+<a href="/homeworks/new/"><h3>Hacer nueva tarea</h3></a>
+
+<a href="/"><h3>Ir a home</h3></a>
+<a href="/teachers/"><h3>Atras</h3></a>

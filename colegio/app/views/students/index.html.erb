@@ -1,0 +1,23 @@
+<h1>Estudiantes</h1>
+
+<ul>
+  <% @students.each do |student| %>
+    <li>
+      <strong>Nombre: </strong>
+      <%= student.name %><br>
+      <strong>Apellido: </strong>
+      <%= student.last_name %><br>
+      <strong>Identificacion: </strong>
+      <%= student.identification %><br>
+      <strong>Email: </strong>
+      <%= student.email %><br>
+      <%= link_to "Ver", student_path(student) %> |
+      <%= link_to "Editar", edit_student_path(student) %> |
+      <%= link_to "Eliminar", student_path(student), method: :delete, data: { confirm: "Desea retirar el estudiante #{student.name}?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/students/new"><h3>Registrar nuevo estudiante</h3></a>
+
+<a href="/"><h3>Ir a home</h3></a>

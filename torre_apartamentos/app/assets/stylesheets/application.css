@@ -13,16 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-a {
-	font-size:  13;
-	text-decoration:  none;
-	color: #555;
-	&visited {
-		color: #555;
-	}
-}
-
-a:hover {
-	color: #f80;
-}

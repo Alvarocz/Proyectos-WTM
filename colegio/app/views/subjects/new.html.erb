@@ -1,0 +1,20 @@
+<h1>Ingresar nueva asignatura</h1>
+
+<%= form_for @subject do |f| %>
+  <p>
+    <%= f.label "Nombre" %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label "Codigo" %>
+    <%= f.text_field :code %>
+  </p>
+
+  <p>
+    <%= f.submit "Ingresar" %>
+  </p>
+<% end %>
+
+<a href="/"><h3>Ir a home</h3></a>
+<a href="/subjects/"><h3>Atras</h3></a>

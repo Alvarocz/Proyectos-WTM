@@ -1,0 +1,28 @@
+<h1>Tarea</h1>
+
+<p>
+  <strong>Enunciado: </strong>
+  <%= @homework.statement %>
+</p>
+
+<p>
+  <strong>Fecha final: </strong>
+  <%= @homework.final_date %>
+</p>
+
+<% if @homework.subject %>
+  <p>
+    <strong>Asignatura: </strong>
+    <%= @homework.subject.name %>
+  </p>
+<%end%>
+
+<% if @homework.teacher %>
+  <p>
+    <strong>Profesor: </strong>
+    <%= @homework.teacher.name %>
+  </p>
+<%end%>
+
+<a href="/"><h3>Ir a home</h3></a>
+<a href="/homeworks/"><h3>Atras</h3></a>

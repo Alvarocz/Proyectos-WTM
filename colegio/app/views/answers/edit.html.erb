@@ -1,0 +1,38 @@
+<h1>Editar la respusta</h1>
+
+<%= form_for @answer do |f| %>
+  <p>
+    <%= f.label "Mensaje" %>
+  </p>
+  <p>
+    <%= f.text_field :message %>
+  </p>
+
+  <p>
+    <%= f.label "Calificacion" %>
+  </p>
+  <p>
+    <%= f.text_field :score %>
+  </p>
+
+  <p>
+    <%= f.label "Estudiante" %>
+  </p>
+  <p>
+    <%= f.select :student_id, Student.all.collect { |s| [s.name, s.last_name, s.id] } %>
+  </p>
+
+  <p>
+    <%= f.label "Tarea" %>
+  </p>
+  <p>
+    <%= f.select :homework_id, Homework.all.collect { |s| [s.statement, s.id] } %>
+  </p>
+
+  <p>
+    <%= f.submit "Actualizar respuesta" %>
+  </p>
+<% end %>
+
+<a href="/"><h3>Ir a home</h3></a>
+<a href="/answers/"><h3>Atras</h3></a>

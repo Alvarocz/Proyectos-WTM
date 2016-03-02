@@ -1,0 +1,21 @@
+<h1>Tareas</h1>
+
+<ol>
+  <% @homeworks.each do |homework| %>
+    <li>
+      <strong>Enunciado: </strong>
+      <%= homework.statement %> | 
+      <strong>Fecha final: </strong>
+      <%= homework.final_date %><br>
+      <% if homework.subject %>
+      <strong>Asignatura: </strong>
+      <%= homework.subject.name %><br>
+      <%= link_to "Ver", homework_path(homework) %> |
+      <%= link_to "Editar", edit_homework_path(homework) %> |
+      <%= link_to "Eliminar", homework_path(homework), method: :delete, data: { confirm: "Desea eliminar la tarea?" } %>
+      <%end%>
+    </li>
+  <% end %>
+</ol>
+
+<a href="/"><h3>Ir a home</h3></a>

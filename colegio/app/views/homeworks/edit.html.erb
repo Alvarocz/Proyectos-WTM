@@ -1,0 +1,31 @@
+<h1>Editar la tarea</h1>
+
+<%= form_for @homework do |f| %>
+  <p>
+    <%= f.label "Enunciado" %>
+  </p>
+  <p id="statement_input">
+    <%= f.text_field :statement %>
+  </p>
+
+  <p>
+    <%= f.label "Fecha_final" %>
+  </p>
+  <p>
+    <%= f.text_field :final_date %>
+  </p>
+
+  <p>
+    <%= f.label "Asignatura" %>
+  </p>
+  <p>
+    <%= f.select :subject_id, Subject.all.collect { |t| [t.name, t.id] } %>
+  </p>
+
+  <p>
+    <%= f.submit  "Actualizar" %>
+  </p>
+<% end %>
+
+<a href="/"><h3>Ir a home</h3></a>
+<a href="/homeworks/"><h3>Atras</h3></a>

@@ -1,0 +1,30 @@
+<h1>Editar el estudiante</h1>
+
+<%= form_for @student do |f| %>
+  <p>
+    <%= f.label "Nombre" %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label "Apellido" %>
+    <%= f.text_field :last_name %>
+  </p>
+
+  <p>
+    <%= f.label "Identificacion" %>
+    <%= f.text_field :identification %>
+  </p>
+
+  <p>
+    <%= f.label "Email" %>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.submit "Actualizar informacion" %>
+  </p>
+<% end %>
+
+<a href="/"><h3>Ir a home</h3></a>
+<a href="/students/"><h3>Atras</h3></a>

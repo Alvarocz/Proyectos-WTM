@@ -1,0 +1,25 @@
+<h1>Editar la asignatura</h1>
+
+<%= form_for @subject do |f| %>
+  <p>
+    <%= f.label "Nombre" %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label "Codigo" %>
+    <%= f.text_field :code %>
+  </p>
+
+  <p>
+    <%= f.label "Profesor" %>
+    <%= f.select :teacher_id, Teacher.all.collect { |t| [t.name, t.id] } %>
+  </p
+
+  <p>
+    <%= f.submit "Actualizar" %>
+  </p>
+<% end %>
+
+<a href="/"><h3>Ir a home</h3></a>
+<a href="/subjects/"><h3>Atras</h3></a>

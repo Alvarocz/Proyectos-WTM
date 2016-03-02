@@ -1,0 +1,23 @@
+<h1>Respuestas</h1>
+
+<ol>
+  <% @answers.each do |answer| %>
+    <li>
+      <strong>Mensaje: </strong>
+      <%= answer.message %>
+      <% if not answer.score == nil %>
+        | <strong>Calificacion: </strong>
+        <%= answer.score %><br>
+      <% else %>
+        <br>
+      <% end %>
+      <strong>Tarea: </strong>
+      <%= answer.homework.statement %><br>
+      <%= link_to "Ver", answer_path(answer) %>
+    </li>
+  <% end %>
+</ol>
+
+<a href="/answers/new"><h3>Crear nueva respuesta</h3></a>
+
+<a href="/"><h3>Ir a home</h3></a>

@@ -15,12 +15,10 @@
 <h2>Habitantes</h2>
 
 <ul>
-  <% Person.all.each do |person| %>
-    <% if Apartment.find(person.apartment_id) == @apartment %>
-      <li>
-        <%= "#{person.name} (Indetificacion: #{person.identification})" %>
-      </li>
-    <% end %>
+  <% @persons.each do |person| %>
+    <li>
+      <%= "#{person.nombre} [Indetificacion: #{person.identification}]" %>
+    </li>
   <% end %>
 </ul>
 

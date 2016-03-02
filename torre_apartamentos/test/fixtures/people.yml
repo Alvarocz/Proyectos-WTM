@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  identification: MyString
-  apartment_id: MyString
+  indentification: MyString
+  apartment_id: 1
 
 two:
   name: MyString
-  identification: MyString
-  apartment_id: MyString
+  indentification: MyString
+  apartment_id: 1

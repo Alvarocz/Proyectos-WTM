@@ -3,8 +3,8 @@ class TowersController < ApplicationController
     @towers = Tower.all
   end
 
-  def edit
-    @tower = Tower.find(params[:id])
+  def new
+    @tower = Tower.new
   end
 
   def create
@@ -13,18 +13,8 @@ class TowersController < ApplicationController
     redirect_to towers_path
   end
 
-  def new
-    @tower = Tower.new
-  end
-
   def show
     @tower = Tower.find(params[:id])
-  end
-
-  def update
-    @tower = Tower.find(params[:id])
-    @tower.update(tower_params)
-    redirect_to towers_path
   end
 
   def tower_params

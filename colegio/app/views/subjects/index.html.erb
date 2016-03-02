@@ -1,0 +1,19 @@
+<h1>Asignaturas</h1>
+
+<ol>
+  <% @subjects.each do |subject| %>
+    <li>
+      <strong>Nombre: </strong>
+      <%= "#{subject.name}" %><br>
+      <strong>Codigo: </strong>
+      <%= subject.code %><br>
+      <%= link_to "Ver", subject_path(subject) %> |
+      <%= link_to "Editar", edit_subject_path(subject) %> |
+      <%= link_to "Eliminar", subject_path(subject), method: :delete, data: { confirm: "Desea eliminar la asignatura #{subject.name}?" } %>
+    </li>
+  <% end %>
+</ol>
+
+<a href="/subjects/new"><h3>Ingresar nueva asignatura</h3></a>
+
+<a href="/"><h3>Ir a home</h3></a>

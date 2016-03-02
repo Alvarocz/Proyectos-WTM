@@ -25,6 +25,12 @@ class ApartmentsController < ApplicationController
 
   def show
     @apartment = Apartment.find(params[:id])
+    @persons = []
+    for person in People.all
+      if person.apartment_id == params[:id]
+        @persons.push(person)
+      end
+    end
   end
 
   def update
