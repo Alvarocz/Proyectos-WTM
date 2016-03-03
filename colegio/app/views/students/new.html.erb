@@ -1,37 +1,34 @@
 <h1>Registrar nuevo estudiante</h1>
 
 <%= form_for @student do |f| %>
-  <p>
-    <%= f.label "Nombre" %>
-  </p>
-  <p>
+  <div>
+    <%= f.label "Nombre" %><br>
     <%= f.text_field :name %>
-  </p>
+  </div>
 
-  <p>
-    <%= f.label "Apellido" %>
-  </p>
-  <p>
+  <div>
+    <%= f.label "Adivellido" %><br>
     <%= f.text_field :last_name %>
-  </p>
+  </div>
 
-  <p>
-    <%= f.label "Identificacion" %>
-  </p>
-  <p>
+  <div>
+    <%= f.label "Identificacion" %><br>
     <%= f.text_field :identification %>
-  </p>
+  </div>
 
-  <p>
-    <%= f.label "Email" %>
-  </p>
-  <p>
+  <div>
+    <%= f.label "Email" %><br>
     <%= f.text_field :email %>
-  </p>
+  </div>
 
-  <p>
+  <div>
+    <%= f.label "Asignaturas" %>
+    <%= f.collection_check_boxes :subject_ids, Suject.all.collect { |s| [s.name, s.id] } %>
+  </div> 
+
+  <div>
     <%= f.submit "Resgistrar" %>
-  </p>
+  </div>
 <% end %>
 
 <a href="/"><h3>Ir a home</h3></a>

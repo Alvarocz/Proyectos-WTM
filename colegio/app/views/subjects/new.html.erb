@@ -1,19 +1,24 @@
 <h1>Ingresar nueva asignatura</h1>
 
 <%= form_for @subject do |f| %>
-  <p>
+  <div>
     <%= f.label "Nombre" %>
     <%= f.text_field :name %>
-  </p>
+  </div>
 
-  <p>
+  <div>
     <%= f.label "Codigo" %>
     <%= f.text_field :code %>
-  </p>
+  </div>
 
-  <p>
+  <div>
+    <%= f.label "Profesores" %>
+    <%= f.collection_check_boxes :teacher_ids, Teacher.all.collect { |t| [t.name, t.last_name, t.id] } %>
+  </div>
+
+  <div>
     <%= f.submit "Ingresar" %>
-  </p>
+  </div>
 <% end %>
 
 <a href="/"><h3>Ir a home</h3></a>

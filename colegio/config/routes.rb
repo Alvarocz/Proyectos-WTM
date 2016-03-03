@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :subjects
   resources :students
+  get '/students/:student_id/subjects', to: "subjects#by_student", as: :by_student
   resources :teachers
   resources :answers
   resources :homeworks

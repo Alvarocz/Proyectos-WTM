@@ -1,0 +1,21 @@
+<h1>Matricular materia</h1>
+
+<% @students.each do |student| %>
+  <% form_for student do |f| %>
+    <p>
+      <%= f.label "Materia: " %><br>
+      <%. f.select :subject_id, Subject.all.collect { |s| [s.name, s.id] } %>
+    </p>
+  <% end %>
+<% end %>
+
+<% form_for @subject do |f| %>
+  <p>
+    <%= f.label "Estudiante: " %><br>
+    <%. f.select :student_id, Student.all.collect { |s| [s.name, s.last_name, s.id] } %>
+  </p>
+<% end %>
+
+<a href="/students/"><h3>Atras</h3></a>
+
+<a href="/"><h3>Ir a home</h3></a>

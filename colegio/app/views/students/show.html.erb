@@ -1,25 +1,39 @@
 <h1>Perfil estudiante</h1>
 
-<p>
+<div>
   <strong>Nombre: </strong>
   <%= @student.name %>
-</p>
-<p>
-  <strong>Apellido: </strong>
+</div>
+<div>
+  <strong>Adivellido: </strong>
   <%= @student.last_name %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Identificacion: </strong>
   <%= @student.identification %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Email: </strong>
   <%= @student.email %>
-</p>
+</div>
 
-<a href="/answers/new/"><h3>Escribir nueva respusta</h3></a>
+<% if @student.subjects != [] %>
+  <div>
+    <strong>Asignaturas: </strong>
+    <ul>
+      <% @student.subjects.each do |subject| %>
+        <li>
+          <%= subject.name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<a href="/answers/new/"><h3>Escribir nueva respuesta</h3></a>
+
+<a href="/students/"><h3>Atras</h3></a>
 
 <a href="/"><h3>Ir a home</h3></a>
-<a href="/students/"><h3>Atras</h3></a>

@@ -3,6 +3,11 @@ class SubjectsController < ApplicationController
     @subjects = Subject.all
   end
 
+  def by_student
+    @student = Student.find(params[:student_id])
+    redirect_to by_student_path
+  end
+
   def destroy
     @subject = Subject.find(params[:id])
     @subject.destroy

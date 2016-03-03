@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   def index
     @students = Student.all
+    @students2 = Student.@students.where("name LIKE ?", "%#{params[:name]}")
   end
 
   def destroy
@@ -34,6 +35,6 @@ class StudentsController < ApplicationController
   end
 
   def student_params
-    params.require(:student).permit(:name, :last_name, :identification, :email)
+    params.require(:student).permit(:name, :last_name, :identification, :email, { subject_ids: [] })
   end
 end
