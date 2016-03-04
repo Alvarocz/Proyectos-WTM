@@ -1,36 +1,46 @@
-<h1>
-  <%= @subject.name %>
-</h1>
+<div class="form_container">
+  <h1>
+    <%= @subject.name %>
+  </h1>
 
-<p>
-  <strong>Codigo: </strong>
-  <%= @subject.code %>
-</p>
+  <div>
+    <strong>Codigo: </strong>
+    <%= @subject.code %>
+  </div>
 
-<% if @subject.teacher %>
-  <p>
-     <strong>La dicta: </strong>
-     <%= @subject.teacher.name %>
-  </p>
-<% end %>
+  <% if @subject.homeworks != [] %>
+    <div>
+      <strong>La dictan: </strong>
+      <ul>
+        <% @subject.teachers.each do |teacher| %>
+          <li>
+            <%= "#{teacher.name} #{teacher.last_name}" %><br>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% else %>
+    <p>Esta asignatura no la dicta ningun profesor</p>
+  <% end %>
 
-<% if @subject.homeworks != [] %>
-  <p>
-    <strong>Tareas: </strong>
-    <ul>
-      <% @subject.homeworks.each do |homework| %>
-        <li>
-          <%= homework.statement %><br>
-          <strong>Fecha de entraga: </strong>
-          <%= homework.final_date %>
-        </li>
-      <% end %>
-    </ul>
-  </p>
-<% else %>
-  <p>No hay tareas en esta asignatura</p>
-<% end %>
+  <% if @subject.homeworks != [] %>
+    <div>
+      <strong>Tareas: </strong>
+      <ul>
+        <% @subject.homeworks.each do |homework| %>
+          <li>
+            <%= homework.statement %><br>
+            <strong>Fecha de entraga: </strong>
+            <%= homework.final_date %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% else %>
+    <p>No hay tareas en esta asignatura</p>
+  <% end %>
+</div>
 
-<a href="/"><h3>Ir a home</h3></a>
+<a href="/subjects/" class="link_button">Atras</a>
 
-<a href="/subjects/"><h3>Atras</h3></a>
+<a href="/" class="link_button">Ir a home</a>

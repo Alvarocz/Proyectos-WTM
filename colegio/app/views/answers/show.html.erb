@@ -1,17 +1,23 @@
-<h1>
-  <%= @answer.message %>
-</h1>
+<div class="form_container">
+  <h1>
+    <%= @answer.message %>
+  </h1>
 
-<p>
-  <strong>Calificacion: </strong>
-  <%= @answer.score %>
-</p>
+  <% if @answer.score != nil %>
+    <div>
+      <strong>Calificacion: </strong>
+      <%= @answer.score %>
+    </div>
+  <% else %>
+    <p>No se ha calificado</p>
+  <% end %>
 
-<p>
-  <strong>Estudiante: </strong>
-  <%= @answer.student %>
-</p>
+  <div>
+    <strong>Estudiante: </strong>
+    <%= @answer.student %>
+  </div>
+</div>
 
-<a href="/answers/"><h3>Atras</h3></a>
+<a href="/answers/" class="link_button">Atras</a>
 
-<a href="/"><h3>Ir a home</h3></a>
+<a href="/" class="link_button">Ir a home</a>

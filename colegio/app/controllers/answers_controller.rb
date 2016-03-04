@@ -13,7 +13,6 @@ class AnswersController < ApplicationController
     @answer = Answer.new(answer_params)
     @answer.subject = @answer.homework.subject
     @answer.subject_id = @answer.homework.subject.id
-    @anser.student = @answer_params.homework.student
     @answer.save
     redirect_to answers_path
   end

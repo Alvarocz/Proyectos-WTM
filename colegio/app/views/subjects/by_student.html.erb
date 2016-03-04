@@ -1,2 +1,17 @@
 <h1>Materias de <%= @student.name %></h1>
 
+<ul>
+
+  <% if @student.subjects.length > 0 %>
+    <% @student.subjects.each do |subject| %>
+      <li>
+        <%= subject.name %>
+      </li>
+    <% end %>
+  <% else %>
+    <p>No tienes materias agregadas. <%= link_to "Agregar materias", edit_student_path(@student) %></p>
+  <% end %>
+  <%= link_to "Volver", students_path, :class => "crud_button" %>
+
+  
+</ul>

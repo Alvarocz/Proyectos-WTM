@@ -1,50 +1,85 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
 body {
-  font-size: 12;
-}
-
-a {
-  font-size: 13;
-  text-decoration: none;
-  color: #888;
-  &visited {
-    color: #888;
-  }
-}
-
-a:hover {
-  color: #F90;
-}
-
-li {
-  margin-bottom: 15px;
-}
-
-#homework_statement, #answer_message {
-  vertical-align: top;
-  width: 400px;
-  height: 100px;
+	font-size: 16px;
+	margin: 0;
 }
 
 div {
-  margin: 14px 0 14px 0;
+	margin: 0px 14 0px 14px;
 }
 
 input {
-  margin-top: 5px;
+	margin-top: 5px;
+}
+
+ul, ol {
+	background-color: #E0E0E0;
+	/*padding: 20px 0 20px 10px; */
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 0;
+	overflow: hidden;
+}
+
+li {
+	margin-bottom: 15px;
+}
+
+a {
+	text-decoration: none;
+	&visited {
+		color: black;
+	}
+}
+
+a.link_button {
+	background-color: #64D78C;
+	color: black;
+	display: block;
+	margin: 2px 0 2px 0;
+	padding: 8px 10px 8px 10px;
+	width: 100%;
+}
+a.link_button:hover {
+	background-color: #27A452;
+	color: white;
+}
+
+a.crud_button {
+	background-color: #64D78C;
+	border-radius: 3px;
+	color: black;
+	font-size: 13px;
+	padding: 4px 4px 4px 4px;
+	margin: 5px 3px 5px 3px;
+}
+
+div.form_container {
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+a.crud_button:hover {
+	color: white;
+	background-color: #27A452;
+}
+
+div.search_container {
+	background-color: #E0E0E0;
+	padding: 10px 5px 10px 5px;
+	margin: 0;
+}
+
+.sublist {
+	padding-top: 5px;
+	padding-bottom: 8px; 
+}
+
+.sublist li {
+	margin: 0;
+}
+
+#homework_statement, #answer_message {
+	vertical-align: top;
+	width: 400px;
+	height: 100px;
 }

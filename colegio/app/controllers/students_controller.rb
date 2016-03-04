@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   def index
     @students = Student.all
-    @students2 = Student.@students.where("name LIKE ?", "%#{params[:name]}")
+    @students2 = Student.where("name LIKE ?", "%#{params[:name]}%")
   end
 
   def destroy

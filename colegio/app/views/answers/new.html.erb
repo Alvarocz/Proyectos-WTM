@@ -1,32 +1,28 @@
 <h1>Crear nueva respuesta</h1>
 
 <%= form_for @answer do |f| %>
-  <p>
-    <%= f.label "Mensaje" %>
-  </p>
-  <p>
-    <%= f.text_field :message %>
-  </p>
+  <div class="form_container">
+    <div>
+      <%= f.label "Mensaje" %><br>
+      <%= f.text_field :message %>
+    </div>
 
-  <p>
-    <%= f.label "Estudiante" %>
-  </p>
-  <p>
-    <%= f.select :student_id, Student.all.collect { |s| [s.name, s.last_name, s.id] } %>
-  </p>
+    <div>
+      <%= f.label "Estudiante" %><br>
+      <%= f.select :student_id, Student.all.collect { |s| [s.name, s.last_name, s.id] } %>
+    </div>
 
+    <div>
+      <%= f.label "Tarea" %><br>
+      <%= f.select :homework_id, Homework.all.collect { |s| [s.statement, s.id] } %>
+    </div>
 
-  <p>
-    <%= f.label "Tarea" %>
-  </p>
-  <p>
-    <%= f.select :homework_id, Homework.all.collect { |s| [s.statement, s.id] } %>
-  </p>
-
-  <p>
-    <%= f.submit "Enviar respuesta" %>
-  </p>
+    <div>
+      <%= f.submit "Enviar respuesta" %>
+    </div>
+  </div>
 <% end %>
 
-<a href="/"><h3>Ir a home</h3></a>
-<a href="/answers/"><h3>Atras</h3></a>
+<a href="/answers/" class="link_button">Atras</a>
+
+<a href="/" class="link_button">Ir a home</a>

@@ -39,6 +39,6 @@ class SubjectsController < ApplicationController
   end
 
   def subject_params
-    params.require(:subject).permit(:name, :code, :teacher_id)
+    params.require(:subject).permit(:name, :code)
   end
 end

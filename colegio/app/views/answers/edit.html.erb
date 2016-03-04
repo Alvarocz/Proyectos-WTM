@@ -1,38 +1,41 @@
 <h1>Editar la respusta</h1>
 
 <%= form_for @answer do |f| %>
-  <p>
-    <%= f.label "Mensaje" %>
-  </p>
-  <p>
-    <%= f.text_field :message %>
-  </p>
+  <div class="form_container">
+    <div>
+      <%= f.label "Mensaje", :id => "answer_message"%>
+    </div>
+    <div>
+      <%= f.text_field :message %>
+    </div>
 
-  <p>
-    <%= f.label "Calificacion" %>
-  </p>
-  <p>
-    <%= f.text_field :score %>
-  </p>
+    <div>
+      <%= f.label "Calificacion" %>
+    </div>
+    <div>
+      <%= f.text_field :score %>
+    </div>
 
-  <p>
-    <%= f.label "Estudiante" %>
-  </p>
-  <p>
-    <%= f.select :student_id, Student.all.collect { |s| [s.name, s.last_name, s.id] } %>
-  </p>
+    <div>
+      <%= f.label "Estudiante" %>
+    </div>
+    <div>
+      <%= f.select :student_id, Student.all.collect { |s| [s.name, s.last_name, s.id] } %>
+    </div>
 
-  <p>
-    <%= f.label "Tarea" %>
-  </p>
-  <p>
-    <%= f.select :homework_id, Homework.all.collect { |s| [s.statement, s.id] } %>
-  </p>
+    <div>
+      <%= f.label "Tarea" %>
+    </div>
+    <div>
+      <%= f.select :homework_id, Homework.all.collect { |s| [s.statement, s.id] } %>
+    </div>
 
-  <p>
-    <%= f.submit "Actualizar respuesta" %>
-  </p>
+    <div>
+      <%= f.submit "Actualizar respuesta" %>
+    </div>
+  </div>
 <% end %>
 
-<a href="/"><h3>Ir a home</h3></a>
-<a href="/answers/"><h3>Atras</h3></a>
+<a href="/answers/" class="link_button">Atras</a>
+
+<a href="/" class="link_button">Ir a home</a>

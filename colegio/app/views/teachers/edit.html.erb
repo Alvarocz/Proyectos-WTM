@@ -1,35 +1,38 @@
-<h1>Editar el divrofesor</h1>
+<h1>Editar el profesor</h1>
 
 <%= form_for @teacher do |f| %>
-  <div>
-    <%= f.label "Nombre" %>
-    <%= f.text_field :name %>
-  </div>
+  <div class="form_container">
+    <div>
+      <%= f.label "Nombre" %>
+      <%= f.text_field :name %>
+    </div>
 
-  <div>
-    <%= f.label "Adivellido" %>
-    <%= f.text_field :last_name %>
-  </div>
+    <div>
+      <%= f.label "Apellido" %>
+      <%= f.text_field :last_name %>
+    </div>
 
-  <div>
-    <%= f.label "Identificacion" %>
-    <%= f.text_field :identification %>
-  </div>
+    <div>
+      <%= f.label "Identificacion" %>
+      <%= f.text_field :identification %>
+    </div>
 
-  <div>
-    <%= f.label "Asignaturas " %><br>
-    <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name %>
-  </div>
+    <div>
+      <%= f.label "Asignaturas " %><br>
+      <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name, :class => "check_section" %>
+    </div>
 
-  <div>
-    <%= f.label "Email" %>
-    <%= f.text_field :email %>
-  </div>
+    <div>
+      <%= f.label "Email" %>
+      <%= f.text_field :email %>
+    </div>
 
-  <div>
-    <%= f.submit "Actualizar informacion" %>
+    <div>
+      <%= f.submit "Actualizar informacion" %>
+    </div>
   </div>
 <% end %>
 
-<a href="/"><h3>Ir a home</h3></a>
-<a href="/teachers/"><h3>Atras</h3></a>
+<a href="/teachers/" class="link_button">Atras</a>
+
+<a href="/" class="link_button">Ir a home</a>

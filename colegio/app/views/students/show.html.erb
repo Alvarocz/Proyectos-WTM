@@ -1,39 +1,41 @@
-<h1>Perfil estudiante</h1>
+<div class="form_container">
+  <h1>Perfil estudiante</h1>
 
-<div>
-  <strong>Nombre: </strong>
-  <%= @student.name %>
-</div>
-<div>
-  <strong>Adivellido: </strong>
-  <%= @student.last_name %>
-</div>
+  <a href="/answers/new/">Escribir nueva respuesta</a>
 
-<div>
-  <strong>Identificacion: </strong>
-  <%= @student.identification %>
-</div>
-
-<div>
-  <strong>Email: </strong>
-  <%= @student.email %>
-</div>
-
-<% if @student.subjects != [] %>
   <div>
-    <strong>Asignaturas: </strong>
-    <ul>
-      <% @student.subjects.each do |subject| %>
-        <li>
-          <%= subject.name %>
-        </li>
-      <% end %>
-    </ul>
+    <strong>Nombre: </strong>
+    <%= @student.name %>
   </div>
-<% end %>
+  <div>
+    <strong>Adivellido: </strong>
+    <%= @student.last_name %>
+  </div>
 
-<a href="/answers/new/"><h3>Escribir nueva respuesta</h3></a>
+  <div>
+    <strong>Identificacion: </strong>
+    <%= @student.identification %>
+  </div>
 
-<a href="/students/"><h3>Atras</h3></a>
+  <div>
+    <strong>Email: </strong>
+    <%= @student.email %>
+  </div>
 
-<a href="/"><h3>Ir a home</h3></a>
+  <% if @student.subjects != [] %>
+    <div>
+      <strong>Asignaturas: </strong>
+      <ul>
+        <% @student.subjects.each do |subject| %>
+          <li>
+            <%= subject.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+<a href="/students/" class="link_button">Atras</a>
+
+<a href="/" class="link_button">Ir a home</a>

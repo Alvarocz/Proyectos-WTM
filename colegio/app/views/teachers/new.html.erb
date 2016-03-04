@@ -1,45 +1,38 @@
 <h1>Registrar nuevo profesor</h1>
 
 <%= form_for @teacher do |f| %>
-  <p>
-    <%= f.label "Nombre" %>
-  </p>
-  <p>
-    <%= f.text_field :name %>
-  </p>
+  <div class="form_container">
+    <div>
+      <%= f.label "Nombre" %><br>
+      <%= f.text_field :name %>
+    </div>
 
-  <p>
-    <%= f.label "Apellido" %>
-  </p>
-  <p>
-    <%= f.text_field :last_name %>
-  </p>
+    <div>
+      <%= f.label "Apellido" %><br>
+      <%= f.text_field :last_name %>
+    </div>
 
-  <p>
-    <%= f.label "Identificacion" %>
-  </p>
-  <p>
-    <%= f.text_field :identification %>
-  </p>
+    <div>
+      <%= f.label "Identificacion" %><br>
+      <%= f.text_field :identification %>
+    </div>
 
-  <p>
-    <%= f.label "Asignatura" %>
-  </p>
-  <p>
-    <%= f.select :subject_id, Subject.all.collect { |a| [a.name, a.id] } %>
-  </p>
+     <div>
+      <%= f.label "Asignaturas " %><br>
+      <%= f.collection_check_boxes :subject_ids, Subject.all, :id, :name %>
+    </div>
 
-  <p>
-    <%= f.label "Email" %>
-  </p>
-  <p>
-    <%= f.text_field :email %>
-  </p>
+    <div>
+      <%= f.label "Email" %><br>
+      <%= f.text_field :email %>
+    </div>
 
-  <p>
-    <%= f.submit "Registrar profesor" %>
-  </p>
+    <div>
+      <%= f.submit "Registrar profesor" %>
+    </div>
+  </div>
 <% end %>
 
-<a href="/"><h3>Ir a home</h3></a>
-<a href="/teachers/"><h3>Atras</h3></a>
+<a href="/teachers/" class="link_button">Atras</a>
+
+<a href="/" class="link_button">Ir a home</a>

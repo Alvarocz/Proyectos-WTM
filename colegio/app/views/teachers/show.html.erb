@@ -1,28 +1,30 @@
 <h1>Perfil profesor</h1>
 
-<p>
+<a href="/homeworks/new/">Hacer nueva tarea</a>
+
+<div>
   <strong>Nombre: </strong>
   <%= @teacher.name %>
-</p>
-<p>
+</div>
+<div>
   <strong>Apellido: </strong>
   <%= @teacher.last_name %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Identificacion: </strong>
   <%= @teacher.identification %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Asignatura: </strong>
   <%= Subject.find(@teacher.subject_id).name %>
-</p>
+</div>
 
-<p>
+<div>
   <strong>Email: </strong>
   <%= @teacher.email %>
-</p>
+</div>
 
 <% if @teacher.answers != [] %>
   <ol>
@@ -37,8 +39,6 @@
   </ol>
 <% end %>
 
-<a href="/homeworks/new/"><h3>Hacer nueva tarea</h3></a>
+<a href="/teachers/" class="link_button">Atras</a>
 
-<a href="/teachers/"><h3>Atras</h3></a>
-
-<a href="/"><h3>Ir a home</h3></a>
+<a href="/" class="link_button">Ir a home</a>
