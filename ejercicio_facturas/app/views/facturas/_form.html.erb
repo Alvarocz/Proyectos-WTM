@@ -1,0 +1,62 @@
+<%= form_for(@factura) do |f| %>
+  <% if @factura.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@factura.errors.count, "error") %> prohibited this factura from being saved:</h2>
+
+      <ul>
+      <% @factura.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <strong><%= f.label "Nombre de factura" %></strong><br>
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <strong><%= f.label "Numero" %></strong><br>
+    <%= f.number_field :numero %>
+  </div>
+  <div class="field">
+    <strong><%= f.label "Fecha" %></strong><br>
+    <%= f.datetime_select :fecha %>
+  </div>
+  <div class="field">
+    <strong><%= f.label "Nombre del facturador" %></strong><br>
+    <%= f.text_field :nombre_emisor %>
+  </div>
+  <div class="field">
+    <strong><%= f.label "Identificacion del facturador" %></strong><br>
+    <%= f.text_field :identificacion_emisor %>
+  </div>
+  <div class="field">
+    <strong><%= f.label "Nombre del cliente" %></strong><br>
+    <%= f.text_field :nombre_receptor %>
+  </div>
+  <div class="field">
+    <strong><%= f.label "Identificacion del cliente" %></strong><br>
+    <%= f.text_field :identificacion_receptor %>
+  </div>
+  <% valor_total = 0 %>
+  <div class="field">
+    <strong><%= f.label "Productos" %></strong></strong><br>
+    <ul>
+      <%= Producto.all.each |producto| %>
+        <li>
+          <%= producto.nombre %>
+          <%= producto.valor %>
+          <% valor_total += producto.precio %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="field">
+    <strong><%= f.label "Valor total" %></strong><br>
+    <%= f.number_field :valor_total %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

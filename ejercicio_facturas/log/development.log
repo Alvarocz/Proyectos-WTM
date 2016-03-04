@@ -1,0 +1,1714 @@
+  [1m[36m (3.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateFacturas (20160304215601)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "facturas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "numero" integer, "fecha" datetime, "nombre_emisor" varchar(255), "identificacion_emisor" varchar(255), "nombre_receptor" varchar(255), "identificacion_receptor" varchar(255), "valor_total" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160304215601"]]
+  [1m[35m (3.5ms)[0m  commit transaction
+Migrating to CreateProductos (20160304215659)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "productos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "tipo" varchar(255), "precio" float, "referencia" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20160304215659"]]
+  [1m[35m (4.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 17:01:17 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+AbstractController::ActionNotFound (The action 'index' could not be found for HomeController):
+  /usr/lib/ruby/vendor_ruby/abstract_controller/base.rb:131:in `process'
+  /usr/lib/ruby/vendor_ruby/action_view/rendering.rb:30:in `process'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal.rb:196:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_controller/metal.rb:232:in `block in action'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/routing/route_set.rb:82:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/routing/route_set.rb:50:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/journey/router.rb:73:in `block in call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/journey/router.rb:59:in `each'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/journey/router.rb:59:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/routing/route_set.rb:692:in `call'
+  rack (1.5.5) lib/rack/etag.rb:23:in `call'
+  rack (1.5.5) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.5) lib/rack/head.rb:11:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/params_parser.rb:27:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.5) lib/rack/session/abstract/id.rb:220:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/cookies.rb:562:in `call'
+  activerecord (4.1.10) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.10) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.10) lib/active_record/migration.rb:380:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/callbacks.rb:82:in `run_callbacks'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/callbacks.rb:27:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/reloader.rb:73:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:38:in `call_app'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `block in call'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `block in tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:26:in `tagged'
+  /usr/lib/ruby/vendor_ruby/active_support/tagged_logging.rb:68:in `tagged'
+  /usr/lib/ruby/vendor_ruby/rails/rack/logger.rb:20:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/engine.rb:514:in `call'
+  /usr/lib/ruby/vendor_ruby/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /usr/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /usr/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 17:02:28 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html within layouts/application (0.2ms)
+Completed 200 OK in 863ms (Views: 855.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:02:29 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 17:03:18 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html within layouts/application (0.4ms)
+Completed 200 OK in 96ms (Views: 95.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:03:18 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:03:18 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:03:18 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:03:18 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:03:18 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:18 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:18 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:19 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:19 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:19 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:19 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:19 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 17:03:57 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html within layouts/application (0.0ms)
+Completed 200 OK in 86ms (Views: 85.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:03:57 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:03:58 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:03:58 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:03:58 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:03:58 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:58 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:58 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:58 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:58 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:58 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:58 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:03:58 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 17:04:10 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html within layouts/application (0.1ms)
+Completed 200 OK in 119ms (Views: 118.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:11 -0500
+
+
+Started GET "/productos/new" for 127.0.0.1 at 2016-03-04 17:04:15 -0500
+Processing by ProductosController#new as HTML
+  Rendered productos/_form.html.erb (22.4ms)
+  Rendered productos/new.html.erb within layouts/application (37.4ms)
+Completed 200 OK in 100ms (Views: 96.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/productos/new" for 127.0.0.1 at 2016-03-04 17:04:37 -0500
+Processing by ProductosController#new as HTML
+  Rendered productos/_form.html.erb (3.1ms)
+  Rendered productos/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 79ms (Views: 78.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:04:38 -0500
+
+
+Started GET "/productos/new" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+Processing by ProductosController#new as HTML
+  Rendered productos/_form.html.erb (2.5ms)
+  Rendered productos/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 96ms (Views: 92.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:05 -0500
+
+
+Started GET "/productos/new" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+Processing by ProductosController#new as HTML
+  Rendered productos/_form.html.erb (2.8ms)
+  Rendered productos/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 67ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:38 -0500
+
+
+Started GET "/productos/new" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+Processing by ProductosController#new as HTML
+  Rendered productos/_form.html.erb (5.7ms)
+  Rendered productos/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 76ms (Views: 74.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:05:55 -0500
+
+
+Started POST "/productos" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+Processing by ProductosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n8M7Ii710Ss4AOs3EQ0peeNdZw6/0vmsPqwd5uenXNg=", "producto"=>{"nombre"=>"Cepillo de dientes", "tipo"=>"Aseo personal", "precio"=>"2500", "referencia"=>"5"}, "commit"=>"Crear producto"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.5ms)[0m  [1mINSERT INTO "productos" ("created_at", "nombre", "precio", "referencia", "tipo", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["created_at", "2016-03-04 22:06:30.740319"], ["nombre", "Cepillo de dientes"], ["precio", 2500.0], ["referencia", 5], ["tipo", "Aseo personal"], ["updated_at", "2016-03-04 22:06:30.740319"]]
+  [1m[35m (9.6ms)[0m  commit transaction
+Redirected to http://localhost:3001/productos/1
+Completed 302 Found in 28ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/productos/1" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+Processing by ProductosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProducto Load (0.2ms)[0m  [1mSELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered productos/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 131ms (Views: 128.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:06:30 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:06:31 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:06:31 -0500
+
+
+Started GET "/productos/1" for 127.0.0.1 at 2016-03-04 17:07:00 -0500
+Processing by ProductosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProducto Load (0.1ms)[0m  SELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered productos/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 109ms (Views: 97.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:00 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:00 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:00 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:00 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:00 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:00 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:00 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:00 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:01 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:01 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:01 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:01 -0500
+
+
+Started GET "/productos/1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+Processing by ProductosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProducto Load (0.1ms)[0m  [1mSELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered productos/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 82ms (Views: 73.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:09 -0500
+
+
+Started GET "/productos/1/edit" for 127.0.0.1 at 2016-03-04 17:07:19 -0500
+Processing by ProductosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProducto Load (0.1ms)[0m  SELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered productos/_form.html.erb (2.7ms)
+  Rendered productos/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 66ms (Views: 65.1ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/productos/1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+Processing by ProductosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n8M7Ii710Ss4AOs3EQ0peeNdZw6/0vmsPqwd5uenXNg=", "producto"=>{"nombre"=>"Cepillo de dientes", "tipo"=>"Aseo personal", "precio"=>"2.5", "referencia"=>"5"}, "commit"=>"Crear producto", "id"=>"1"}
+  [1m[36mProducto Load (0.1ms)[0m  [1mSELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "productos" SET "precio" = ?, "updated_at" = ? WHERE "productos"."id" = 1[0m  [["precio", 2.5], ["updated_at", "2016-03-04 22:07:29.442624"]]
+  [1m[35m (3.6ms)[0m  commit transaction
+Redirected to http://localhost:3001/productos/1
+Completed 302 Found in 11ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/productos/1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+Processing by ProductosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProducto Load (0.1ms)[0m  [1mSELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered productos/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 61ms (Views: 59.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:07:29 -0500
+
+
+Started GET "/productos/1" for 127.0.0.1 at 2016-03-04 17:20:03 -0500
+Processing by ProductosController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ArgumentError (Unknown validator: 'InclussionValidator'):
+  app/models/producto.rb:4:in `<class:Producto>'
+  app/models/producto.rb:1:in `<top (required)>'
+  app/controllers/productos_controller.rb:67:in `set_producto'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.0ms)
+
+
+Started GET "/productos/1" for 127.0.0.1 at 2016-03-04 17:21:11 -0500
+Processing by ProductosController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+ArgumentError (Unknown validator: 'RangeValidator'):
+  app/models/producto.rb:7:in `<class:Producto>'
+  app/models/producto.rb:1:in `<top (required)>'
+  app/controllers/productos_controller.rb:67:in `set_producto'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.6ms)
+
+
+Started GET "/productos/1" for 127.0.0.1 at 2016-03-04 17:21:27 -0500
+Processing by ProductosController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+ArgumentError (Unknown validator: 'NumericallyValidator'):
+  app/models/producto.rb:9:in `<class:Producto>'
+  app/models/producto.rb:1:in `<top (required)>'
+  app/controllers/productos_controller.rb:67:in `set_producto'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.7ms)
+
+
+Started GET "/productos/1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+Processing by ProductosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProducto Load (0.1ms)[0m  SELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered productos/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 127ms (Views: 95.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:06 -0500
+
+
+Started GET "/productos/1/edit" for 127.0.0.1 at 2016-03-04 17:22:10 -0500
+Processing by ProductosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProducto Load (0.1ms)[0m  [1mSELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered productos/_form.html.erb (7.5ms)
+  Rendered productos/edit.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 95ms (Views: 93.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/productos/1/edit" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+Processing by ProductosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mProducto Load (0.1ms)[0m  SELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered productos/_form.html.erb (2.3ms)
+  Rendered productos/edit.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 140ms (Views: 120.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:22:53 -0500
+
+
+Started PATCH "/productos/1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+Processing by ProductosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n8M7Ii710Ss4AOs3EQ0peeNdZw6/0vmsPqwd5uenXNg=", "producto"=>{"nombre"=>"Cepillo de dientes", "tipo"=>"Aseo personal", "precio"=>"2.5", "referencia"=>"-1"}, "commit"=>"Crear producto", "id"=>"1"}
+  [1m[36mProducto Load (0.1ms)[0m  [1mSELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered productos/_form.html.erb (20.3ms)
+  Rendered productos/edit.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 123ms (Views: 105.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:23:08 -0500
+
+
+Started PATCH "/productos/1" for 127.0.0.1 at 2016-03-04 17:24:03 -0500
+Processing by ProductosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n8M7Ii710Ss4AOs3EQ0peeNdZw6/0vmsPqwd5uenXNg=", "producto"=>{"nombre"=>"Cepillo de dientes", "tipo"=>"aseo personal", "precio"=>"2500", "referencia"=>"1"}, "commit"=>"Crear producto", "id"=>"1"}
+  [1m[35mProducto Load (0.1ms)[0m  SELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered productos/_form.html.erb (6.2ms)
+  Rendered productos/edit.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 111ms (Views: 95.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:24:04 -0500
+
+
+Started PATCH "/productos/1" for 127.0.0.1 at 2016-03-04 17:25:22 -0500
+Processing by ProductosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n8M7Ii710Ss4AOs3EQ0peeNdZw6/0vmsPqwd5uenXNg=", "producto"=>{"nombre"=>"Cepillo de dientes", "tipo"=>"aseo personal", "precio"=>"2500", "referencia"=>"1"}, "commit"=>"Crear producto", "id"=>"1"}
+  [1m[36mProducto Load (0.1ms)[0m  [1mSELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered productos/_form.html.erb (7.0ms)
+  Rendered productos/edit.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 124ms (Views: 119.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:23 -0500
+
+
+Started PATCH "/productos/1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+Processing by ProductosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n8M7Ii710Ss4AOs3EQ0peeNdZw6/0vmsPqwd5uenXNg=", "producto"=>{"nombre"=>"cama", "tipo"=>"hogar", "precio"=>"2000000", "referencia"=>"50"}, "commit"=>"Crear producto", "id"=>"1"}
+  [1m[35mProducto Load (0.1ms)[0m  SELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (13.8ms)[0m  rollback transaction
+  Rendered productos/_form.html.erb (8.8ms)
+  Rendered productos/edit.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 123ms (Views: 106.7ms | ActiveRecord: 13.9ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:25:40 -0500
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:26:01 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:26:01 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:26:01 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:26:01 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:26:01 -0500
+
+
+Started PATCH "/productos/1" for 127.0.0.1 at 2016-03-04 17:29:33 -0500
+Processing by ProductosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n8M7Ii710Ss4AOs3EQ0peeNdZw6/0vmsPqwd5uenXNg=", "producto"=>{"nombre"=>"escoba", "tipo"=>"aseo", "precio"=>"3800", "referencia"=>"10"}, "commit"=>"Crear producto", "id"=>"1"}
+  [1m[36mProducto Load (0.2ms)[0m  [1mSELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "productos" SET "nombre" = ?, "precio" = ?, "referencia" = ?, "tipo" = ?, "updated_at" = ? WHERE "productos"."id" = 1[0m  [["nombre", "escoba"], ["precio", 3800.0], ["referencia", 10], ["tipo", "aseo"], ["updated_at", "2016-03-04 22:29:33.987548"]]
+  [1m[35m (3.5ms)[0m  commit transaction
+Redirected to http://localhost:3001/productos/1
+Completed 302 Found in 27ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/productos/1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+Processing by ProductosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProducto Load (0.1ms)[0m  [1mSELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered productos/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 91ms (Views: 90.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:29:34 -0500
+
+
+Started GET "/productos" for 127.0.0.1 at 2016-03-04 17:30:18 -0500
+Processing by ProductosController#index as HTML
+  [1m[35mProducto Load (0.3ms)[0m  SELECT "productos".* FROM "productos"
+  Rendered productos/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 87ms (Views: 84.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/productos/new" for 127.0.0.1 at 2016-03-04 17:30:25 -0500
+Processing by ProductosController#new as HTML
+  Rendered productos/_form.html.erb (2.5ms)
+  Rendered productos/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 88ms (Views: 87.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/productos" for 127.0.0.1 at 2016-03-04 17:30:27 -0500
+Processing by ProductosController#index as HTML
+  [1m[36mProducto Load (0.2ms)[0m  [1mSELECT "productos".* FROM "productos"[0m
+  Rendered productos/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 109ms (Views: 108.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/productos" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+Processing by ProductosController#index as HTML
+  [1m[35mProducto Load (0.2ms)[0m  SELECT "productos".* FROM "productos"
+  Rendered productos/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 96ms (Views: 95.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:21 -0500
+
+
+Started GET "/productos/new" for 127.0.0.1 at 2016-03-04 17:31:25 -0500
+Processing by ProductosController#new as HTML
+  Rendered productos/_form.html.erb (2.2ms)
+  Rendered productos/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 91ms (Views: 90.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/productos" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+Processing by ProductosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n8M7Ii710Ss4AOs3EQ0peeNdZw6/0vmsPqwd5uenXNg=", "producto"=>{"nombre"=>"Cepillo de dientes", "tipo"=>"aseo_personal", "precio"=>"2500", "referencia"=>"2"}, "commit"=>"Crear producto"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "productos" ("created_at", "nombre", "precio", "referencia", "tipo", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", "2016-03-04 22:31:39.702369"], ["nombre", "Cepillo de dientes"], ["precio", 2500.0], ["referencia", 2], ["tipo", "aseo_personal"], ["updated_at", "2016-03-04 22:31:39.702369"]]
+  [1m[36m (13.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3001/productos/2
+Completed 302 Found in 20ms (ActiveRecord: 14.2ms)
+
+
+Started GET "/productos/2" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+Processing by ProductosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mProducto Load (2.8ms)[0m  SELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered productos/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 97ms (Views: 93.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:39 -0500
+
+
+Started GET "/productos" for 127.0.0.1 at 2016-03-04 17:31:42 -0500
+Processing by ProductosController#index as HTML
+  [1m[36mProducto Load (0.2ms)[0m  [1mSELECT "productos".* FROM "productos"[0m
+  Rendered productos/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 105ms (Views: 104.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/productos/home" for 127.0.0.1 at 2016-03-04 17:31:46 -0500
+Processing by ProductosController#show as HTML
+  Parameters: {"id"=>"home"}
+  [1m[35mProducto Load (0.1ms)[0m  SELECT  "productos".* FROM "productos"  WHERE "productos"."id" = ? LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.1ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Producto with 'id'=home):
+  app/controllers/productos_controller.rb:67:in `set_producto'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+Processing by HomeController#index as HTML
+  Rendered home/index.html within layouts/application (0.0ms)
+Completed 200 OK in 98ms (Views: 93.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:31:56 -0500
+
+
+Started GET "/productos/new" for 127.0.0.1 at 2016-03-04 17:31:58 -0500
+Processing by ProductosController#new as HTML
+  Rendered productos/_form.html.erb (3.4ms)
+  Rendered productos/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 82ms (Views: 81.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:32:02 -0500
+Processing by FacturasController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `all' for :productos:Symbol):
+  app/models/factura.rb:4:in `<class:Factura>'
+  app/models/factura.rb:1:in `<top (required)>'
+  app/controllers/facturas_controller.rb:17:in `new'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.7ms)
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:32:02 -0500
+Processing by FacturasController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `all' for :productos:Symbol):
+  app/models/factura.rb:4:in `<class:Factura>'
+  app/models/factura.rb:1:in `<top (required)>'
+  app/controllers/facturas_controller.rb:17:in `new'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.2ms)
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:32:33 -0500
+Processing by FacturasController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `productos' for nil:NilClass):
+  app/models/factura.rb:4:in `<class:Factura>'
+  app/models/factura.rb:1:in `<top (required)>'
+  app/controllers/facturas_controller.rb:17:in `new'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (0.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.0ms)
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:38:40 -0500
+Processing by FacturasController#new as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/alvaro/Escritorio/Proyectos-WTM/ejercicio_facturas/app/models/factura.rb:4: syntax error, unexpected '=', expecting keyword_end
+  =begin 
+   ^
+/home/alvaro/Escritorio/Proyectos-WTM/ejercicio_facturas/app/models/factura.rb:7: syntax error, unexpected '=', expecting keyword_end
+  =end
+   ^
+/home/alvaro/Escritorio/Proyectos-WTM/ejercicio_facturas/app/models/factura.rb:12: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/models/factura.rb:4: syntax error, unexpected '=', expecting keyword_end
+  app/models/factura.rb:7: syntax error, unexpected '=', expecting keyword_end
+  app/models/factura.rb:12: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/facturas_controller.rb:17:in `new'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.1ms)
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:39:45 -0500
+Processing by FacturasController#new as HTML
+  Rendered facturas/_form.html.erb (0.8ms)
+  Rendered facturas/new.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms)
+
+SyntaxError (/home/alvaro/Escritorio/Proyectos-WTM/ejercicio_facturas/app/views/facturas/_form.html.erb:44: syntax error, unexpected '<', expecting ')'
+    <%= f.collection_check_boxes :...
+     ^
+/home/alvaro/Escritorio/Proyectos-WTM/ejercicio_facturas/app/views/facturas/_form.html.erb:53: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/alvaro/Escritorio/Proyectos-WTM/ejercicio_facturas/app/views/facturas/_form.html.erb:55: syntax error, unexpected keyword_ensure, expecting ')'
+/home/alvaro/Escritorio/Proyectos-WTM/ejercicio_facturas/app/views/facturas/_form.html.erb:57: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/facturas/_form.html.erb:44: syntax error, unexpected '<', expecting ')'
+  app/views/facturas/_form.html.erb:53: syntax error, unexpected keyword_end, expecting ')'
+  app/views/facturas/_form.html.erb:55: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/facturas/_form.html.erb:57: syntax error, unexpected keyword_end, expecting ')'
+  app/views/facturas/new.html.erb:3:in `_app_views_facturas_new_html_erb___393088749__618911038'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (24.2ms)
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:40:09 -0500
+Processing by FacturasController#new as HTML
+  Rendered facturas/_form.html.erb (0.9ms)
+  Rendered facturas/new.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/home/alvaro/Escritorio/Proyectos-WTM/ejercicio_facturas/app/views/facturas/_form.html.erb:44: syntax error, unexpected '<', expecting ')'
+    <%= f.collection_check_boxes :...
+     ^
+/home/alvaro/Escritorio/Proyectos-WTM/ejercicio_facturas/app/views/facturas/_form.html.erb:53: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/home/alvaro/Escritorio/Proyectos-WTM/ejercicio_facturas/app/views/facturas/_form.html.erb:55: syntax error, unexpected keyword_ensure, expecting ')'
+/home/alvaro/Escritorio/Proyectos-WTM/ejercicio_facturas/app/views/facturas/_form.html.erb:57: syntax error, unexpected keyword_end, expecting ')'):
+  app/views/facturas/_form.html.erb:44: syntax error, unexpected '<', expecting ')'
+  app/views/facturas/_form.html.erb:53: syntax error, unexpected keyword_end, expecting ')'
+  app/views/facturas/_form.html.erb:55: syntax error, unexpected keyword_ensure, expecting ')'
+  app/views/facturas/_form.html.erb:57: syntax error, unexpected keyword_end, expecting ')'
+  app/views/facturas/new.html.erb:3:in `_app_views_facturas_new_html_erb___393088749__618911038'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.0ms)
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:40:22 -0500
+Processing by FacturasController#new as HTML
+  [1m[36mProducto Load (0.2ms)[0m  [1mSELECT "productos".* FROM "productos"[0m
+  Rendered facturas/_form.html.erb (66.4ms)
+  Rendered facturas/new.html.erb within layouts/application (69.1ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `product_ids' for #<Factura:0xadb2db0>):
+    41:   </div>
+    42:   <div class="field">
+    43:     <%= f.label "Productos" %>
+    44:     <%= f.collection_check_boxes :product_ids, Producto.all, :id, :nombre %>
+    45:   </div>
+    46:   <div class="field">
+    47:     <%= f.label :valor_total %><br>
+  app/views/facturas/_form.html.erb:44:in `block in _app_views_facturas__form_html_erb___757435143_91058220'
+  app/views/facturas/_form.html.erb:1:in `_app_views_facturas__form_html_erb___757435143_91058220'
+  app/views/facturas/new.html.erb:3:in `_app_views_facturas_new_html_erb___393088749__618911038'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.1ms)
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+Processing by FacturasController#new as HTML
+  [1m[35mProducto Load (0.2ms)[0m  SELECT "productos".* FROM "productos"
+  Rendered facturas/_form.html.erb (48.5ms)
+  Rendered facturas/new.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 178ms (Views: 174.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:04 -0500
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+Processing by FacturasController#new as HTML
+  [1m[36mProducto Load (0.2ms)[0m  [1mSELECT "productos".* FROM "productos"[0m
+  Rendered facturas/_form.html.erb (26.6ms)
+  Rendered facturas/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 114ms (Views: 113.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:42:28 -0500
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+Processing by FacturasController#new as HTML
+  [1m[35mProducto Load (0.3ms)[0m  SELECT "productos".* FROM "productos"
+  Rendered facturas/_form.html.erb (16.9ms)
+  Rendered facturas/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 109ms (Views: 107.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:44:30 -0500
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:44:54 -0500
+Processing by FacturasController#new as HTML
+  Rendered facturas/_form.html.erb (20.9ms)
+  Rendered facturas/new.html.erb within layouts/application (21.5ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `merge' for :precio:Symbol):
+    41:   </div>
+    42:   <div class="field">
+    43:     <strong><%= f.label "Productos" %></strong><br>
+    44:     <%= f.collection_check_boxes :producto_ids, Producto.all, :id, :nombre, :precio %>
+    45:   </div>
+    46:   <div class="field">
+    47:     <%= f.label :valor_total %><br>
+  app/views/facturas/_form.html.erb:44:in `block in _app_views_facturas__form_html_erb___757435143_90923740'
+  app/views/facturas/_form.html.erb:1:in `_app_views_facturas__form_html_erb___757435143_90923740'
+  app/views/facturas/new.html.erb:3:in `_app_views_facturas_new_html_erb___393088749__618911038'
+
+
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /usr/lib/ruby/vendor_ruby/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.5ms)
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+Processing by FacturasController#new as HTML
+  [1m[36mProducto Load (6.7ms)[0m  [1mSELECT "productos".* FROM "productos"[0m
+  Rendered facturas/_form.html.erb (31.6ms)
+  Rendered facturas/new.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 114ms (Views: 106.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:46:44 -0500
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+Processing by FacturasController#new as HTML
+  [1m[35mProducto Load (0.2ms)[0m  SELECT "productos".* FROM "productos"
+  Rendered facturas/_form.html.erb (24.3ms)
+  Rendered facturas/new.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 127ms (Views: 125.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:47:43 -0500
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+Processing by FacturasController#new as HTML
+  [1m[36mProducto Load (0.2ms)[0m  [1mSELECT "productos".* FROM "productos"[0m
+  Rendered facturas/_form.html.erb (31.9ms)
+  Rendered facturas/new.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 119ms (Views: 118.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:13 -0500
+
+
+Started GET "/facturas/new" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+Processing by FacturasController#new as HTML
+  [1m[35mProducto Load (0.2ms)[0m  SELECT "productos".* FROM "productos"
+  Rendered facturas/_form.html.erb (23.3ms)
+  Rendered facturas/new.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 115ms (Views: 114.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/facturas.css?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+
+
+Started GET "/assets/productos.css?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+
+
+Started GET "/assets/facturas.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+
+
+Started GET "/assets/productos.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-03-04 17:48:40 -0500
