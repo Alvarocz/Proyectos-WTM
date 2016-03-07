@@ -1,0 +1,32 @@
+<h1>Lista de rutas</h1>
+
+<div>
+  <strong>Origen:</strong>
+  <%= @route.origin %>
+</div>
+
+<div>
+  <strong>Destino:</strong>
+  <%= @route.destination %>
+</div>
+
+<div>
+  <strong>Pilotos: </strong>
+  <ul>
+    <% @route.pilots.each do |pilot| %>
+      <li>
+        <strong>Nombre: </strong>
+        <%= pilot.name %>
+        <strong>Identificacion: </strong>
+        <%= pilot.identification %>
+        <% if pilot.airplane %>
+          <strong>Nombre del avion: </strong>
+          <%= pilot.airplane.name %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to 'Editar', edit_route_path(@route) %> |
+<%= link_to 'Atras', routes_path %>

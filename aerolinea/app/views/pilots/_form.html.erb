@@ -1,0 +1,29 @@
+<%= form_for(@pilot) do |f| %>
+  <% if @pilot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pilot.errors.count, "error") %> prohibited this pilot from being saved:</h2>
+
+      <ul>
+      <% @pilot.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Nombre" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Identificacion" %><br>
+    <%= f.text_field :identification %>
+  </div>
+  <div class="field">
+    <%= f.label "Avion" %><br>
+    <%= f.select :airplane_id, Airplane.all.collect { |a| [a.name, a.id] } %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Registrar" %>
+  </div>
+<% end %>

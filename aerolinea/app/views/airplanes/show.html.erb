@@ -1,0 +1,14 @@
+<div id="notice"><%= notice %></div>
+
+<div>
+  <strong>Name:</strong>
+  <%= @airplane.name %>
+</div>
+
+<div>
+  <strong>Piloto:</strong>
+  <%= @airplane.pilot.name %>
+</div>
+
+<%= link_to 'Editar', edit_airplane_path(@airplane) %> |
+<%= link_to 'Atras', airplanes_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  airlien_id: 1
+  route_id: 1
+  pilot_id: 1
+  deapart_time: 2016-03-07 16:51:01
+  arrival_time: 2016-03-07 16:51:01
+
+two:
+  airlien_id: 1
+  route_id: 1
+  pilot_id: 1
+  deapart_time: 2016-03-07 16:51:01
+  arrival_time: 2016-03-07 16:51:01

@@ -1,0 +1,29 @@
+<h1>Lista de pilotos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Identificacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pilots.each do |pilot| %>
+      <tr>
+        <td><%= pilot.name %></td>
+        <td><%= pilot.identification %></td>
+        <td><%= link_to 'Ver', pilot %></td>
+        <td><%= link_to 'Editar', edit_pilot_path(pilot) %></td>
+        <td><%= link_to 'Quitar', pilot, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Registrar nuevo piloto', new_pilot_path %>
+
+<a href="/">Ir a home</a>
