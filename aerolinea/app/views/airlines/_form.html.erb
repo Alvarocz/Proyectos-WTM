@@ -15,7 +15,11 @@
     <%= f.label "Nombre" %><br>
     <%= f.text_field :name %>
   </div>
+  <div class="field">
+    <%= f.label "Rutas" %><br>
+    <%= f.collection_check_boxes :route_ids, Route.all, :id, :origin %>
+  </div>
   <div class="actions">
-    <%= f.submit "Crear" %>
+    <%= f.submit %>
   </div>
 <% end %>

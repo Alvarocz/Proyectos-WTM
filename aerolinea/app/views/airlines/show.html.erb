@@ -1,9 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div id="notice"><%= notice %></div>
 
-<p>
-  <strong>Name:</strong>
+<div>
+  <strong>Nombre: </strong>
   <%= @airline.name %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_airline_path(@airline) %> |
-<%= link_to 'Back', airlines_path %>
+<% if @airline.routes != [] %>
+  <div>
+    <strong>Rutas: </strong>
+    <ol>
+      <% @airline.routes.each do |route| %>
+        <li>
+          <%= route.origin %> - <%= route.destination %>
+        </li>
+      <% end %>
+    </ol>
+  </div>
+<% end %>
+
+<%= link_to 'Editar', edit_airline_path(@airline) %> |
+<%= link_to 'Atras', airlines_path %>

@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="field">
+    <%= f.label "Aerolinea" %><br>
+    <%= f.select :airline_id, Airline.all.collect { |a| [a.name, a.id] } %>
+  </div>
+
+  <div class="field">
     <%= f.label "Hora de salida" %><br>
     <%= f.datetime_select :depart_time %>
   </div>

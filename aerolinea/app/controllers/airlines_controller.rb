@@ -1,28 +1,22 @@
 class AirlinesController < ApplicationController
   before_action :set_airline, only: [:show, :edit, :update, :destroy]
 
-  # GET /airlines
-  # GET /airlines.json
   def index
     @airlines = Airline.all
   end
 
-  # GET /airlines/1
-  # GET /airlines/1.json
   def show
+    @airline = Airline.find(params[:id])
   end
 
-  # GET /airlines/new
   def new
     @airline = Airline.new
   end
 
-  # GET /airlines/1/edit
   def edit
+    @airline = Airline.find(params[:id])
   end
 
-  # POST /airlines
-  # POST /airlines.json
   def create
     @airline = Airline.new(airline_params)
 
@@ -37,8 +31,6 @@ class AirlinesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /airlines/1
-  # PATCH/PUT /airlines/1.json
   def update
     respond_to do |format|
       if @airline.update(airline_params)
@@ -51,8 +43,6 @@ class AirlinesController < ApplicationController
     end
   end
 
-  # DELETE /airlines/1
-  # DELETE /airlines/1.json
   def destroy
     @airline.destroy
     respond_to do |format|
@@ -62,13 +52,11 @@ class AirlinesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_airline
       @airline = Airline.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def airline_params
-      params.require(:airline).permit(:name, :airline_id)
+      params.require(:airline).permit(:name, { :airline_ids => [] })
     end
 end
