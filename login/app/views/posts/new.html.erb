@@ -1,0 +1,17 @@
+<h2>Create new post</h2>
+
+<strong>User: <%= current_user.username %></strong>
+
+<%= form_for @post do |f| %>
+  <div>
+    <strong>Title</strong>
+    <%= f.text_field :title %><br>
+  </div>
+  <div>
+    <strong>Messsage</strong>
+    <%= f.text_field :message %><br>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
