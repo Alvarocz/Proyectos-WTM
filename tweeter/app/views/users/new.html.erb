@@ -1,0 +1,27 @@
+<h1>Crear usuario</h1>
+
+<%= form_for @user do |f| %>
+	<p>
+		<%= f.label :message, "Nombre" %><br>
+	</p>
+	<p>
+		<%= f.text_field :nombre %>
+	</p>
+	<p>
+		<%= f.label :message, "Username" %><br>
+	</p>
+	<p>
+		<%= f.text_field :username %>
+	</p>
+	<p>
+		<%= f.label :message, "Email" %><br>
+	</p>
+	<p>
+		<%= f.text_field :email %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>
+
+<a href="/"><h2>Volver a home</h2></a>

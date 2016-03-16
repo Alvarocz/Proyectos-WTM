@@ -41,20 +41,12 @@
   </div>
   <% valor_total = 0 %>
   <div class="field">
-    <strong><%= f.label "Productos" %></strong></strong><br>
-    <ul>
-      <%= Producto.all.each |producto| %>
-        <li>
-          <%= producto.nombre %>
-          <%= producto.valor %>
-          <% valor_total += producto.precio %>
-        </li>
-      <% end %>
-    </ul>
+    <strong><%= f.label "Productos" %></strong><br>
+    <%= f.collection_check_boxes :producto_ids, Producto.all, :id, :nombre %>
   </div>
   <div class="field">
     <strong><%= f.label "Valor total" %></strong><br>
-    <%= f.number_field :valor_total %>
+    <%= valor_total %>
   </div>
   <div class="actions">
     <%= f.submit %>

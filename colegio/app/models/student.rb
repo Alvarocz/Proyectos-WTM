@@ -4,5 +4,6 @@ class Student < ActiveRecord::Base
   has_many :answers
 
   validates :name, presence: true
+  validates :identification, presence: true
   validates :id, uniqueness: true
 end

@@ -1,0 +1,18 @@
+<h1>Crear Tweet</h1>
+
+<%= form_for @tweet do |f| %>
+  <p>
+    <%= f.label :message, "Tweet" %><br>
+  </p>
+  <p>
+    <%= f.text_field :message %>
+  </p>
+  <p>
+    <%= f.select :user_id, User.all.collect{|u| [u.nombre, u.id]} %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<a href="/"><h2>Volver a home</h2></a>

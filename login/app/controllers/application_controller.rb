@@ -23,9 +23,13 @@ class ApplicationController < ActionController::Base
      session[:previous_url] || new_post_path
   end
 
+  def after_sign_up_path_for
+    posts_path
+  end
+
     protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :username, :city, :country, :avatar])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :username, :city, :country, :avatar, :cover_image])
     end
 end

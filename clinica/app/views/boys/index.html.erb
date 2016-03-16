@@ -1,0 +1,50 @@
+<h2>Registrar nino</h2>
+
+<%= form_tag({controller: 'boys', action: 'new'}, method: 'post') do %>
+  <strong>Nombre</strong><br>
+  <%= text_field_tag(:name) %><br>
+
+  <strong>Segundo nombre</strong><br>
+  <%= text_field_tag(:second_name) %><br>
+
+  <strong>Primer apellido</strong><br>
+  <%= text_field_tag(:last_name) %><br>
+
+  <strong>Segundo apellido</strong><br>
+  <%= text_field_tag(:second_surname) %><br>
+
+  <strong>TI</strong><br>
+  <%= text_field_tag(:ti) %><br>
+
+  <strong>Edad</strong><br>
+  <%= number_field_tag(:years) %><br>
+
+  <strong>Genero</strong><br>
+  <%= select_tag(:genere, options_for_select('Masculino', 'Femenino')) %><br>
+
+  <strong>Grupo sanguineo</strong><br>
+  <%= select_tag(:blood_type, options_for_select(['O-', 'O+', 'A+', 'A-', 'B+', 'B-'])) %><br>
+
+  <strong>Nombre completo de la madre</strong><br>
+  <%= text_field_tag(:mother_fullname) %><br>
+
+  <strong>Nombre completo del padre</strong><br>
+  <%= text_field_tag(:father_fullname) %><br>
+
+  <strong>Vacunas</strong><br>
+  <%= check_box_tag(:vaccines[0], 'Sarampion') %><br>
+  <%= check_box_tag(:vaccines[1], 'Rubeola') %><br>
+  <%= check_box_tag(:vaccines[3], 'Tetano') %><br>
+  <!-- <strong>Fecha de nacimiento</strong><br> -->
+  <!-- <%= date_select_tag(:birthdate) %>-->
+  <strong>Antecedentes</strong><br>
+  <%= label_tag(:antecedents[0], 'cancer') %>
+  <%= radio_button_tag(:antecedents[0], 'Si') %><br>
+  <%= radio_button_tag(:antecedents[0], 'No') %><br>
+  <%= label_tag(:antecedents[0], 'hipertension') %>
+  <%= radio_button_tag(:antecedents[0], 'Si') %><br>
+  <%= radio_button_tag(:antecedents[0], 'No') %><br>
+  <%= label_tag(:antecedents[0], 'tetano') %>
+  <%= radio_button_tag(:antecedents[0], 'Si') %><br>
+  <%= radio_button_tag(:antecedents[0], 'No') %><br>
+<% end %>

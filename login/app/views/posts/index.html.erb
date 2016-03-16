@@ -1,23 +1,40 @@
 <h2>Posts</h2>
 
-<ul>
-  <% if @posts != [] %>
-    <% @posts.each do |post| %>
-      <li>
-        <%= post.title %><br>
-        <strong>By: </strong>
-        <%= post.user %>
-      </li>
-    <% end %>
+<div class="background_image">
+  <% if user_signed_in? %>
+    <strong>User: </strong> 
+    <%= link_to "#{current_user.username}", edit_user_registration_path %><br>
+    <%= image_tag current_user.avatar %>
   <% end %>
-</ul>
 
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
+  <div class="index_container">
+    <ul>
+      <% if @posts != [] %>
+        <% @posts.each do |post| %>
+          <li class="index_li">
+            <strong>Title: </strong>
+            <%= post.title %><br>
+            <div class="message_box"><%= post.message %></div><br>
+            <% if post.user != nil %>
+              <strong>By: </strong>
+              <%= post.user.username %>
+            <% end %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </li>
+        <% end %>
+      <%= link_to 'Create new post', new_post_path %>
+      <% end %>
+    </ul>
+  </div>
+
+  <% if user_signed_in? %>
+    <li>
+    <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+    </li>
+  <% else %>
+    <li>
+    <%= link_to('Login', new_user_session_path)  %>  
+    </li>
+  <% end %>
+</div>

@@ -1,0 +1,5 @@
+<h2><%= @tweet.message %></h2>
+
+<%= "By: #{User.find(@tweet.user_id).nombre}"%>
+
+<a href="/"><h2>Volver a home</h2></a>

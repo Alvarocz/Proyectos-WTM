@@ -1,0 +1,13 @@
+<h1>Lista de usuarios</h1>
+
+<ul>
+	<% @users.each do |user| %>
+		<li>
+			<%= user.nombre %>
+			<%= " (#{user.username})" %>
+			<%= " [#{user.email}]" %>
+		</li>
+	<% end %>
+</ul>
+
+<a href="/"><h2>Volver a home</h2></a>

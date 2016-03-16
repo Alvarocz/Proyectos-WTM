@@ -8,6 +8,8 @@ class BoysController < ApplicationController
 
   def create
     @boy = Boy.new(boy_params)
+    @boy.save
+    redirect_to root_path
   end
 
   def boy_params

@@ -1,0 +1,13 @@
+<h1>Editar Tweet</h1>
+
+<%= form_for @tweet do |f| %>
+	<p>
+		<%= f.label :message %><br>
+	</p>
+	<p>
+		<%= f.text_field :message %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

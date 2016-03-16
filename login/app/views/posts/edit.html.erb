@@ -1,0 +1,20 @@
+<h2>Edit post</h2>
+
+<strong>User: <%= current_user.username %></strong>
+
+<%= form_for @post do |f| %>
+  <div>
+    <strong>Title</strong>
+    <%= f.text_field :title %><br>
+  </div>
+  <div>
+    <strong>Messsage</strong>
+    <%= f.text_field :message %><br>
+  </div>
+  <% if user_signed_in? %>
+    <% @post.user_id = current_user.id %>
+  <% end %>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
