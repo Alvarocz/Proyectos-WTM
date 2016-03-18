@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @posts = Post.all
   end
@@ -13,6 +14,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     @post.save
     redirect_to posts_path
   end
@@ -27,8 +29,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def update
     @post = Post.find(params[:id])
+    @post.user_id = current_user.id
     @post.update(post_params)
     redirect_to posts_path
   end

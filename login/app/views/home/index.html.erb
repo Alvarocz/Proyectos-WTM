@@ -1,0 +1,33 @@
+<h2>Welcome</h2>
+
+<% if user_signed_in? %>
+  <strong>User: </strong> 
+  <%= link_to "#{current_user.username}", user_path(current_user) %><br>
+  <%= image_tag current_user.avatar %>
+<% end %>
+
+<h3>Uploaded posts</h3>
+
+<div class="background_image">
+  <% if @posts != [] %>
+    <% @posts.each do |post| %>
+      <div class="index_container">
+        <ul>
+          <li class="index_li">
+            <strong>Title: </strong>
+            <%= post.title %><br>
+            <div class="message_box">
+              <%= post.message %>
+            </div>
+            <% if post.user != nil %>
+              <strong>By: </strong>
+              <%= post.user.username %>
+            <% end %>
+            <%= link_to 'Show', post_path(post) %>
+          </li>
+          <%= link_to 'Create new post', new_post_path %>
+        </ul>
+      </div>
+    <% end %>
+  <% end %>
+</div>

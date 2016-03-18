@@ -1,0 +1,26 @@
+<h2>Post</h2>
+
+<div class="background_image">
+  <% if user_signed_in? %>
+    <strong>User: </strong> 
+    <%= link_to "#{current_user.username}", user_path(current_user) %><br>
+    <%= image_tag current_user.avatar %>
+  <% end %>
+
+  <%= link_to 'Home', root_path %>
+
+  <div class="container">
+  	<strong>Title</strong>
+  	<%= @post.title %>
+  	<div class="message_box">
+  		<%= @post.message %>
+  	</div>
+
+    <% if @post.user != nil %>
+      <strong>By: </strong>
+      <%= @post.user.username %>
+    <% end %>
+  </div>
+</div>
+
+<%= link_to 'Back', :back %>

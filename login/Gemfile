@@ -24,12 +24,17 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 #Authentication
-gem 'devise', '~>4.0.0.rc1'
+gem 'devise', '~> 3.2'
 
 #Load Files
 gem 'carrierwave'
 
 gem 'twitter-bootstrap-rails'
+
+gem 'letter_opener', :group => :development
+
+# Admin Dashboard
+gem 'activeadmin', '~> 1.0.0.pre2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
