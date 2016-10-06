@@ -1,3 +1,3 @@
 # Proyectos-WTM
-Proyectos del curso de World Tech Makers. 
-Inclute el proyecto principal y los retos diarios.
+Trabajos del curso de Ruby On Rails. 
+Incluye el proyecto principal y los retos diarios.
